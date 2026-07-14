@@ -82,8 +82,6 @@ export function HowItWorks() {
   );
 }
 
-import type { ReactNode } from "react";
-
 export function FinalCTA({
   title = "Try it on your next shoot.",
   body = "If PosePerfect doesn’t make positioning faster and easier, contact Fail Up Inc. support within 30 days of delivery about a return under the product-page guarantee.",
