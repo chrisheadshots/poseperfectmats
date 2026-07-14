@@ -15,6 +15,40 @@ export function SiteFooter() {
             shoot groups, headshots, and high-volume sessions.
           </p>
           <p className="mt-4 text-sm text-yellow">{SITE.poweredBy}</p>
+          <a
+            href={SITE.instagramUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-4 inline-flex items-center gap-2 text-sm text-white/80 transition hover:text-yellow"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden
+              className="shrink-0"
+            >
+              <rect
+                x="3"
+                y="3"
+                width="18"
+                height="18"
+                rx="5"
+                stroke="currentColor"
+                strokeWidth="1.7"
+              />
+              <circle
+                cx="12"
+                cy="12"
+                r="4"
+                stroke="currentColor"
+                strokeWidth="1.7"
+              />
+              <circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" />
+            </svg>
+            Follow {SITE.instagramHandle}
+          </a>
           <p className="mt-2 text-xs text-white/45">
             {LOOX_STATS.count} verified Loox reviews · {LOOX_STATS.average}★
             average
@@ -57,6 +91,16 @@ export function SiteFooter() {
                 rel="noreferrer"
               >
                 failupinc.com
+              </a>
+            </li>
+            <li>
+              <a
+                href={SITE.instagramUrl}
+                className="hover:text-yellow"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Instagram {SITE.instagramHandle}
               </a>
             </li>
             <li>

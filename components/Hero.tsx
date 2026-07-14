@@ -71,7 +71,15 @@ export function Hero({
           </motion.div>
           <p className="mt-6 text-sm text-white/55">
             {LOOX_STATS.count} verified Loox reviews · {LOOX_STATS.average}★ ·
-            30-day support path · Free tracked shipping
+            30-day support path · Free tracked shipping ·{" "}
+            <a
+              href={SITE.instagramUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="text-white/70 underline decoration-yellow/50 underline-offset-4 transition hover:text-yellow"
+            >
+              {SITE.instagramHandle}
+            </a>
           </p>
         </div>
         <motion.div

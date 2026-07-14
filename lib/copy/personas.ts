@@ -24,6 +24,8 @@ export const SITE = {
   name: "PosePerfect Mat™",
   url: "https://poseperfectmats.com",
   poweredBy: "Powered by Fail Up Inc.",
+  instagramHandle: "@poseperfectmats",
+  instagramUrl: "https://www.instagram.com/poseperfectmats/",
   heroHeadline:
     "Stop Repositioning Every Client. Put Their Feet Where the Perfect Shot Starts.",
   heroSubheadline:

@@ -24,6 +24,7 @@ export function JsonLd() {
         "@type": "Brand",
         name: SITE.name,
       },
+      sameAs: [SITE.instagramUrl, SITE.url],
     },
     {
       "@context": "https://schema.org",

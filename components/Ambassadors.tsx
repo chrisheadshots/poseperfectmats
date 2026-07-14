@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { AMBASSADORS } from "@/lib/copy/ambassadors";
+import { SITE } from "@/lib/copy/personas";
 
 export function Ambassadors() {
   return (
@@ -15,6 +16,14 @@ export function Ambassadors() {
           Trusted by working photographers using PosePerfect Mat in real
           sessions — @jaquieohh, @shootwithray, and @joeywrightphoto.
         </p>
+        <a
+          href={SITE.instagramUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-sm text-white/85 transition hover:border-yellow hover:text-yellow"
+        >
+          Follow us on Instagram {SITE.instagramHandle}
+        </a>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {AMBASSADORS.map((a) => (
             <article
