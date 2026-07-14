@@ -48,11 +48,15 @@ export function Comparison() {
     <section id="compare" className="scroll-mt-20 py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <p className="text-xs uppercase tracking-[0.18em] text-muted">
-          Comparison
+          Tape vs PosePerfect
         </p>
-        <h2 className="mt-3 max-w-xl font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl">
+        <h2 className="mt-3 max-w-2xl font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl">
           Tape marks a spot. PosePerfect teaches the stance.
         </h2>
+        <p className="mt-3 max-w-xl text-muted">
+          Floor dots and verbal-only direction still leave clients guessing.
+          Pros standardize the footprint — then direct expression, not GPS.
+        </p>
         <div className="mt-8 overflow-x-auto rounded-2xl border border-line bg-white">
           <table className="min-w-full text-left text-sm">
             <thead className="border-b border-line bg-paper-deep text-xs uppercase tracking-[0.12em] text-muted">

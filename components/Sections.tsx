@@ -1,4 +1,7 @@
+"use client";
+
 import type { ReactNode } from "react";
+import { Reveal } from "@/components/motion/Reveal";
 
 export function ProblemSection({
   title = "Every “step left” costs you time.",
@@ -11,27 +14,31 @@ export function ProblemSection({
     <section className="border-y border-line bg-white py-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-          <h2 className="font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl">
-            {title}
-          </h2>
-          <div>
-            <p className="text-lg leading-relaxed text-muted">{body}</p>
-            <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-              {[
-                "Clients guess where to stand",
-                "Groups drift out of composition",
-                "Lines slow down",
-                "You repeat directions all day",
-              ].map((item) => (
-                <li
-                  key={item}
-                  className="border-l-2 border-yellow pl-3 text-sm font-medium"
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
+          <Reveal>
+            <h2 className="font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl">
+              {title}
+            </h2>
+          </Reveal>
+          <Reveal delay={0.06}>
+            <div>
+              <p className="text-lg leading-relaxed text-muted">{body}</p>
+              <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+                {[
+                  "Clients guess where to stand",
+                  "Groups drift out of composition",
+                  "Lines slow down",
+                  "You repeat directions all day",
+                ].map((item) => (
+                  <li
+                    key={item}
+                    className="border-l-2 border-yellow pl-3 text-sm font-medium"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>
@@ -53,28 +60,32 @@ export function HowItWorks() {
     {
       n: "03",
       title: "Shoot, crop, next",
-      body: "Capture, keep the mat out of the final crop, move the line forward.",
+      body: "Capture, keep the mat out of the final crop when needed, move the line forward.",
     },
   ];
 
   return (
     <section id="how-it-works" className="scroll-mt-20 py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <p className="text-xs uppercase tracking-[0.18em] text-muted">
-          How it works
-        </p>
-        <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl">
-          Three steps. Less talking.
-        </h2>
+        <Reveal>
+          <p className="text-xs uppercase tracking-[0.18em] text-muted">
+            Behind the scenes · 30 seconds
+          </p>
+          <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl">
+            Three steps. Less talking. More keeping.
+          </h2>
+        </Reveal>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {steps.map((s) => (
-            <div key={s.n} className="border-t-2 border-yellow pt-5">
-              <p className="font-[family-name:var(--font-display)] text-3xl text-yellow-deep">
-                {s.n}
-              </p>
-              <h3 className="mt-3 text-xl font-semibold">{s.title}</h3>
-              <p className="mt-2 text-sm text-muted">{s.body}</p>
-            </div>
+          {steps.map((s, i) => (
+            <Reveal key={s.n} delay={i * 0.06}>
+              <div className="border-t-2 border-yellow pt-5">
+                <p className="font-[family-name:var(--font-display)] text-3xl text-yellow-deep">
+                  {s.n}
+                </p>
+                <h3 className="mt-3 text-xl font-semibold">{s.title}</h3>
+                <p className="mt-2 text-sm text-muted">{s.body}</p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>

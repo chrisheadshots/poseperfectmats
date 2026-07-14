@@ -15,7 +15,16 @@ export function SiteHeader() {
           </span>
         </Link>
         <nav className="hidden items-center gap-4 text-sm text-white/75 lg:flex">
-          {PERSONA_LIST.map((p) => (
+          <a href="#who" className="transition hover:text-yellow">
+            Who are you?
+          </a>
+          <a href="#roi" className="transition hover:text-yellow">
+            ROI
+          </a>
+          <a href="#system" className="transition hover:text-yellow">
+            System
+          </a>
+          {PERSONA_LIST.slice(0, 3).map((p) => (
             <Link
               key={p.path}
               href={p.path}

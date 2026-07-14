@@ -26,7 +26,8 @@ const seoDescription = `${SITE.heroSubheadline} Shop authentic PosePerfect Mat�
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: "PosePerfect Mat™ — Stop Repositioning Every Client",
+    default:
+      "PosePerfect Mat™ — The Posing System for Professional Photographers",
     template: "%s · PosePerfect Mat™",
   },
   description: seoDescription,
@@ -49,7 +50,8 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "PosePerfect Mat™ — Stop Repositioning Every Client",
+    title:
+      "PosePerfect Mat™ — The Posing System for Professional Photographers",
     description: seoDescription,
     url: SITE.url,
     siteName: SITE.name,
@@ -58,7 +60,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "PosePerfect Mat™ — Stop Repositioning Every Client",
+    title:
+      "PosePerfect Mat™ — The Posing System for Professional Photographers",
     description: SITE.heroSubheadline,
   },
   robots: {

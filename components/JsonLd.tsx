@@ -1,9 +1,12 @@
 import { MASTER_FAQS, SITE } from "@/lib/copy/personas";
-import { LOOX_STATS } from "@/lib/reviews/reviews";
+import { LOOX_STATS, REVIEWS } from "@/lib/reviews/reviews";
 import { CATALOG } from "@/lib/catalog/catalog";
+import { LOOX_VIDEOS } from "@/lib/reviews/loox-media";
 
 export function JsonLd() {
   const product = CATALOG["standard-unbranded"];
+  const demo = LOOX_VIDEOS.find((v) => v.id === "r5seTpBe3") ?? LOOX_VIDEOS[0];
+
   const data = [
     {
       "@context": "https://schema.org",
@@ -65,6 +68,17 @@ export function JsonLd() {
         bestRating: "5",
         worstRating: "1",
       },
+      review: REVIEWS.slice(0, 5).map((r) => ({
+        "@type": "Review",
+        author: { "@type": "Person", name: r.name },
+        datePublished: r.date,
+        reviewBody: r.body,
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: r.rating,
+          bestRating: "5",
+        },
+      })),
     },
     {
       "@context": "https://schema.org",
@@ -72,6 +86,7 @@ export function JsonLd() {
       name: "How to use PosePerfect Mat™",
       description:
         "Place the mat, match the color-coded footprints, and shoot with less client repositioning.",
+      totalTime: "PT1M",
       step: [
         {
           "@type": "HowToStep",
@@ -102,6 +117,21 @@ export function JsonLd() {
         },
       })),
     },
+    ...(demo
+      ? [
+          {
+            "@context": "https://schema.org",
+            "@type": "VideoObject",
+            name: "PosePerfect Mat™ customer demo video",
+            description:
+              "Muted customer demonstration and review footage of PosePerfect Mat™ in real photographer workflows.",
+            thumbnailUrl: [demo.poster],
+            contentUrl: demo.preview,
+            uploadDate: "2026-06-12",
+            duration: `PT${Math.round(demo.videoDuration)}S`,
+          },
+        ]
+      : []),
   ];
 
   return (

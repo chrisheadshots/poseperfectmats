@@ -53,15 +53,15 @@ export function OfferCatalog({ persona = "master" }: Props) {
     <section id="offers" className="scroll-mt-20 bg-paper-deep py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <p className="text-xs uppercase tracking-[0.18em] text-muted">
-          Shop PosePerfect
+          Enter the PosePerfect System™
         </p>
         <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl">
-          Mats, bundles, and volume packs
+          Build your kit. Raise your AOV like a pro.
         </h2>
         <p className="mt-3 max-w-2xl text-muted">
-          Choose Unbranded or Branded Standard, Junior for kids stations, or
-          grab a ready bundle. Set your quantity, add to cart, then checkout when
-          you&apos;re ready.
+          Start with Standard (Unbranded or Branded), add Junior for kids
+          stations, stack the Posing Guide, or jump into volume packs. Quantity
+          first — cart second — Shopify checkout when you&apos;re ready.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-2">

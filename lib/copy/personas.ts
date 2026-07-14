@@ -29,9 +29,9 @@ export const SITE = {
   heroHeadline:
     "Stop Repositioning Every Client. Put Their Feet Where the Perfect Shot Starts.",
   heroSubheadline:
-    "PosePerfect Mat™ uses color-coded footprint guides to help groups and headshot clients stand correctly in seconds — so you spend less time saying “step left” and more time capturing usable photos.",
+    "PosePerfect Mat™ is the physical SOP for photographers who shoot people for a living — color-coded footprints so clients stand correctly in seconds, the line keeps moving, and you stop burning billable minutes on the same five instructions.",
   primaryCta: "Add PosePerfect Mat™ — $54.99",
-  secondaryCta: "See how it works",
+  secondaryCta: "See the system",
 } as const;
 
 export const MASTER_FAQS: FaqItem[] = [
