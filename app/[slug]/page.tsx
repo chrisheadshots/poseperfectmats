@@ -4,7 +4,9 @@ import { Ambassadors } from "@/components/Ambassadors";
 import { CheckoutButton } from "@/components/CheckoutButton";
 import { FAQ } from "@/components/FAQ";
 import { Hero } from "@/components/Hero";
+import { LooxPhotoWall } from "@/components/LooxPhotoWall";
 import { LooxReviews } from "@/components/LooxReviews";
+import { LooxVideoSlider } from "@/components/LooxVideoSlider";
 import { OfferCatalog } from "@/components/OfferCatalog";
 import {
   FinalCTA,
@@ -90,7 +92,9 @@ export default async function PersonaPage({
       />
       <ProblemSection title={persona.problemTitle} body={persona.problemBody} />
       <HowItWorks />
+      <LooxVideoSlider />
       <OfferCatalog persona={persona.key} />
+      <LooxPhotoWall />
       <LooxReviews
         reviews={reviewsForPersona(reviewTag, 3)}
         title={`Proof for ${persona.navLabel.toLowerCase()}`}
