@@ -74,7 +74,7 @@ export const CATALOG: Record<CatalogItemId, CatalogItem> = {
     description:
       "Sized for kids, school picture days, and second stations — pair with Standard for Family & Volume setups.",
     image:
-      "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/poseperfect-mat-flatlay.png?v=1782353205",
+      "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/11928183723383658915_2048.jpg?v=1774391970",
   },
   "posing-guide": {
     id: "posing-guide",

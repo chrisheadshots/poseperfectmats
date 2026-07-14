@@ -120,8 +120,8 @@ export const PERSONAS: Record<Exclude<PersonaKey, "master">, PersonaCopy> = {
       "Picture day needs speed and structure. One message — “stand on the blue feet” — keeps K-8, sports, and volume lines consistent across operators.",
     primaryCta: "Shop Volume Packs",
     heroImage:
-      "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/poseperfect-mat-flatlay.png?v=1782353205",
-    heroAlt: "PosePerfect Mat for high-volume school photography",
+      "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/11928183723383658915_2048.jpg?v=1774391970",
+    heroAlt: "PosePerfect Mat Junior for high-volume school photography",
     problemTitle: "Consistency matters when you shoot hundreds in a day.",
     problemBody:
       "Students drift. Assistants vary. Retakes pile up. PosePerfect turns subject placement into a physical SOP your whole team can run.",
