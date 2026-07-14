@@ -27,7 +27,7 @@ export const AMBASSADORS: Ambassador[] = [
     instagramUrl: "https://www.instagram.com/jaquieohh/",
     highlight:
       "Guides inexperienced subjects through posing with clarity — the same client-confidence problem PosePerfect solves on the floor.",
-    image: "/ambassadors/jaquieohh.svg",
+    image: "/ambassadors/jaquieohh.png",
   },
   {
     handle: "@shootwithray",
@@ -39,7 +39,7 @@ export const AMBASSADORS: Ambassador[] = [
     instagramUrl: "https://www.instagram.com/shootwithray/",
     highlight:
       "Known for streamlined headshot and corporate workflows — clients praise clear posture direction that keeps sessions moving.",
-    image: "/ambassadors/shootwithray.svg",
+    image: "/ambassadors/shootwithray.png",
   },
   {
     handle: "@joeywrightphoto",
@@ -51,6 +51,6 @@ export const AMBASSADORS: Ambassador[] = [
     instagramUrl: "https://www.instagram.com/joeywrightphoto/",
     highlight:
       "Builds careers around precise posing direction — a pro who knows stance and confidence start before the shutter click.",
-    image: "/ambassadors/joeywrightphoto.svg",
+    image: "/ambassadors/joeywrightphoto.png",
   },
 ];

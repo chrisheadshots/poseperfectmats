@@ -12,9 +12,8 @@ export function Ambassadors() {
           Trusted by Top Photographers
         </h2>
         <p className="mt-3 max-w-2xl text-white/65">
-          Ambassadors aligned with PosePerfect Mat — bios from their public
-          sites. Product-related Instagram posts hydrate when storefront content
-          rights are confirmed.
+          Trusted by working photographers using PosePerfect Mat in real
+          sessions — @jaquieohh, @shootwithray, and @joeywrightphoto.
         </p>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {AMBASSADORS.map((a) => (
@@ -22,13 +21,13 @@ export function Ambassadors() {
               key={a.handle}
               className="flex flex-col border border-white/10 bg-white/[0.03] p-5"
             >
-              <div className="relative mb-5 h-40 w-40 overflow-hidden rounded-full border border-yellow/40">
+              <div className="relative mb-5 aspect-[4/5] w-full overflow-hidden rounded-2xl border border-yellow/30 bg-ink-soft">
                 <Image
                   src={a.image}
-                  alt={a.name}
+                  alt={`${a.name} — ${a.role}`}
                   fill
-                  className="object-cover"
-                  sizes="160px"
+                  className="object-cover object-top"
+                  sizes="(max-width:768px) 100vw, 33vw"
                 />
               </div>
               <p className="text-sm text-yellow">{a.handle}</p>
