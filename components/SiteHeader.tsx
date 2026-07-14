@@ -2,6 +2,12 @@ import Link from "next/link";
 import { CartButton } from "@/components/cart/CartButton";
 import { PERSONA_LIST, SITE } from "@/lib/copy/personas";
 
+const HOME_SECTIONS = [
+  { href: "/#who", label: "Who are you?" },
+  { href: "/#roi", label: "ROI" },
+  { href: "/#system", label: "System" },
+] as const;
+
 export function SiteHeader() {
   return (
     <header className="absolute inset-x-0 top-0 z-40">
@@ -15,15 +21,11 @@ export function SiteHeader() {
           </span>
         </Link>
         <nav className="hidden items-center gap-4 text-sm text-white/75 lg:flex">
-          <a href="#who" className="transition hover:text-yellow">
-            Who are you?
-          </a>
-          <a href="#roi" className="transition hover:text-yellow">
-            ROI
-          </a>
-          <a href="#system" className="transition hover:text-yellow">
-            System
-          </a>
+          {HOME_SECTIONS.map((item) => (
+            <a key={item.href} href={item.href} className="transition hover:text-yellow">
+              {item.label}
+            </a>
+          ))}
           {PERSONA_LIST.slice(0, 3).map((p) => (
             <Link
               key={p.path}
@@ -35,7 +37,7 @@ export function SiteHeader() {
           ))}
           <CartButton />
           <a
-            href="#offers"
+            href="/#offers"
             className="rounded-full bg-yellow px-4 py-2 font-semibold text-ink transition hover:bg-yellow-deep"
           >
             Shop mats
@@ -44,7 +46,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-2 lg:hidden">
           <CartButton />
           <a
-            href="#offers"
+            href="/#offers"
             className="rounded-full bg-yellow px-4 py-2 text-sm font-semibold text-ink"
           >
             Shop

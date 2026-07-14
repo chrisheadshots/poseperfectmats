@@ -63,7 +63,7 @@ export function Hero({
           >
             <CheckoutButton label={ctaLabel} itemId={itemId} />
             <a
-              href="#how-it-works"
+              href="/#how-it-works"
               className="rounded-full border border-white/30 px-5 py-3 text-sm font-medium text-white transition hover:border-yellow hover:text-yellow"
             >
               {SITE.secondaryCta}

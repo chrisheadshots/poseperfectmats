@@ -96,7 +96,7 @@ export function PosePerfectSystem() {
         <Reveal delay={0.1}>
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <a
-              href="#offers"
+              href="/#offers"
               className="rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white hover:bg-ink-soft"
             >
               Enter the system — shop mats

@@ -71,7 +71,7 @@ export function PersonaGate() {
           })}
           <Reveal delay={0.2}>
             <Link
-              href="#offers"
+              href="/#offers"
               className="group flex h-full flex-col border border-ink bg-ink px-5 py-5 text-white transition hover:bg-ink-soft"
             >
               <p className="text-xs uppercase tracking-[0.14em] text-yellow">

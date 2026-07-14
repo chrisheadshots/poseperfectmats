@@ -164,7 +164,7 @@ export function HeroDemo() {
                   ) : null}
                   {scene.mood === "cta" ? (
                     <a
-                      href="#offers"
+                      href="/#offers"
                       className="mt-2 inline-flex rounded-full bg-yellow px-3 py-1.5 text-xs font-semibold text-ink sm:mt-4 sm:px-4 sm:py-2 sm:text-sm"
                     >
                       Build your kit →
@@ -230,7 +230,7 @@ export function HeroDemo() {
               buttonClassName="px-5 py-2.5 text-sm shadow-[0_0_0_1px_rgba(245,197,24,0.35)] sm:px-6 sm:py-3"
             />
             <a
-              href="#roi"
+              href="/#roi"
               className="rounded-full border border-white/30 px-4 py-2.5 text-xs font-medium text-white transition hover:border-yellow hover:text-yellow sm:px-5 sm:py-3 sm:text-sm"
             >
               Run your ROI

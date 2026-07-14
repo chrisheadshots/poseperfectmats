@@ -3,6 +3,7 @@ import { Fraunces, DM_Sans } from "next/font/google";
 import { CartDrawer } from "@/components/cart/CartDrawer";
 import { CartProvider } from "@/components/cart/CartProvider";
 import { MetaPixel } from "@/components/MetaPixel";
+import { ScrollToHash } from "@/components/ScrollToHash";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { JsonLd } from "@/components/JsonLd";
@@ -91,6 +92,7 @@ export default function RootLayout({
         <CartProvider>
           <JsonLd />
           <MetaPixel />
+          <ScrollToHash />
           <SiteHeader />
           <main className="flex-1">{children}</main>
           <SiteFooter />
