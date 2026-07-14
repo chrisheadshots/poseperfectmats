@@ -219,8 +219,8 @@ export const PERSONAS: Record<Exclude<PersonaKey, "master">, PersonaCopy> = {
       "Start every subject in a proven stance. Pair the mat with the Advanced Posing Guide when you want the language and the floor cue together.",
     primaryCta: "Get Mat + Posing Guide",
     heroImage:
-      "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/PPM_Mock_Up.png?v=1774391759",
-    heroAlt: "PosePerfect Mat for beginner photographers",
+      "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/PPM_Guide_Mockup_Main.png?v=1755061597",
+    heroAlt: "PosePerfect Mat Advanced Posing Guide for beginner photographers",
     problemTitle: "Direction is the hard part of looking professional.",
     problemBody:
       "You already own lights and a camera. PosePerfect gives you a repeatable first instruction so early sessions feel confident instead of chaotic.",

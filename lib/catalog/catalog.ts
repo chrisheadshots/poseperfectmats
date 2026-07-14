@@ -61,7 +61,7 @@ export const CATALOG: Record<CatalogItemId, CatalogItem> = {
     description:
       "Same professional stance system with Chris Headshots branding — best value for everyday headshot days.",
     image:
-      "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/PPM_Mockup_3.png?v=1774391500",
+      "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/2697318803232113874_2048.jpg?v=1774391759",
   },
   "junior-unbranded": {
     id: "junior-unbranded",
@@ -87,7 +87,7 @@ export const CATALOG: Record<CatalogItemId, CatalogItem> = {
     description:
       "Digital posing education that pairs with the mat — ideal when you want direction language, not just foot placement.",
     image:
-      "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/PPM_Mock_Up.png?v=1774391759",
+      "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/PPM_Guide_Mockup_Main.png?v=1755061597",
   },
   "family-volume-pack": {
     id: "family-volume-pack",
@@ -99,7 +99,7 @@ export const CATALOG: Record<CatalogItemId, CatalogItem> = {
     description:
       "Two stations ready: Standard + Junior mats for school days, family minis, and multi-assistant workflows.",
     image:
-      "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/Mockup_4.png?v=1774391759",
+      "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/3ec758599e81145666697104250b29de_1783356758744_518e82c3-7269-4d52-927b-54c6b781e818.jpg?v=1783357034",
     badge: "Best for volume",
   },
   "mat-guide-bundle": {
@@ -113,7 +113,7 @@ export const CATALOG: Record<CatalogItemId, CatalogItem> = {
     description:
       "Physical stance system plus the Advanced Posing Guide — the confidence kit for newer shooters and headshot pros.",
     image:
-      "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/PosePerfect-Mockup.jpg?v=1774391759",
+      "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/13340230636374747239_2048_99828b95-d562-45e9-9f96-dadfeb3412f3.jpg?v=1755060217",
     badge: "Save vs buying separate",
   },
 };
