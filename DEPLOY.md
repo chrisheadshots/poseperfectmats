@@ -1,51 +1,62 @@
 # Deploy poseperfectmats.com
 
-## 1. Shopify Storefront token
+## Live now
+
+| Item | Value |
+|---|---|
+| Production URL | https://poseperfectmat.vercel.app |
+| GitHub | https://github.com/chrisheadshots/poseperfectmats |
+| Vercel project | `loft954-projects/poseperfectmat` |
+| Domains attached | `poseperfectmats.com`, `www.poseperfectmats.com` (DNS pending) |
+
+## DNS (GoDaddy / domaincontrol.com)
+
+Current nameservers are `ns61.domaincontrol.com` / `ns62.domaincontrol.com`. Keep them and add records **or** switch nameservers to Vercel (`ns1.vercel-dns.com`, `ns2.vercel-dns.com`).
+
+### Recommended records (keep GoDaddy NS)
+
+In GoDaddy DNS for `poseperfectmats.com`:
+
+| Type | Name | Value | Notes |
+|---|---|---|---|
+| **A** | `@` | `76.76.21.21` | Apex → Vercel |
+| **CNAME** | `www` | `cname.vercel-dns.com` | www → Vercel |
+
+Remove any conflicting A/CNAME on `@` or `www` that point elsewhere. Vercel emails when verification completes.
+
+## 1. Shopify Storefront token (required for headless cart)
 
 1. Open Fail Up Inc. Shopify Admin (`c767d9.myshopify.com`).
 2. Enable the **Headless** sales channel (or create a custom app with Storefront API access).
-3. Create a **Storefront API access token** with at least:
-   - `unauthenticated_read_product_listings`
-   - `unauthenticated_write_checkouts` / cart scopes (Cart API)
-4. Put the token in Vercel env as `SHOPIFY_STOREFRONT_ACCESS_TOKEN`.
+3. Create a **Storefront API access token** with product + cart scopes.
+4. In Vercel → Project → Settings → Environment Variables, add:
 
-Until the token is set, CTAs open Fail Up product pages as a fallback.
-
-## 2. Vercel project
-
-```bash
-npx vercel --prod
+```
+SHOPIFY_STOREFRONT_ACCESS_TOKEN=<token>
 ```
 
-Or connect the GitHub repo in the Vercel dashboard.
+5. Redeploy production after adding the token:
 
-### Required environment variables
+```bash
+vercel --prod
+```
+
+Until the token is set, CTAs open Fail Up Inc. product pages as a fallback.
+
+## 2. Environment variables (already set on production where applicable)
 
 | Name | Value |
 |---|---|
 | `SHOPIFY_STORE_DOMAIN` | `c767d9.myshopify.com` |
-| `SHOPIFY_STOREFRONT_ACCESS_TOKEN` | *(from Shopify)* |
+| `SHOPIFY_STOREFRONT_ACCESS_TOKEN` | *(add manually — secret)* |
 | `SHOPIFY_API_VERSION` | `2025-04` |
 | `NEXT_PUBLIC_SITE_URL` | `https://poseperfectmats.com` |
 | `NEXT_PUBLIC_SHOPIFY_STOREFRONT_URL` | `https://failupinc.com` |
 
-## 3. Domain DNS (poseperfectmats.com)
+## 3. Smoke test
 
-In Vercel → Project → Settings → Domains:
-
-1. Add `poseperfectmats.com`
-2. Add `www.poseperfectmats.com` (redirect www → apex or vice versa)
-
-At your DNS provider, apply the records Vercel shows (typically):
-
-- **A** `@` → `76.76.21.21`
-- **CNAME** `www` → `cname.vercel-dns.com`
-
-Wait for TLS + DNS verification (can take a few minutes to hours).
-
-## 4. Smoke test
-
-1. Open `https://poseperfectmats.com`
-2. Use ROI calculator and FAQ
-3. Click **Get PosePerfect Mat** — should redirect to Shopify `checkoutUrl` when token is configured
-4. Hit persona routes under `/corporate-headshots`, `/school-volume`, etc.
+1. Open https://poseperfectmat.vercel.app (and poseperfectmats.com after DNS)
+2. ROI calculator + FAQ
+3. Shop offer tabs / Volume Builder
+4. Persona routes: `/corporate-headshots`, `/school-volume`, `/event-photo-booths`, `/family-sessions`, `/beginner-photographers`
+5. CTA → Shopify `checkoutUrl` once token is configured
