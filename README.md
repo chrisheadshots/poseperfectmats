@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PosePerfect Mat — Landing System
 
-## Getting Started
+Conversion site for **PosePerfect Mat** on [poseperfectmats.com](https://poseperfectmats.com), powered by Fail Up Inc. headless Shopify checkout.
 
-First, run the development server:
+## Pages
+
+| Route | Purpose |
+|---|---|
+| `/` | Master ROI landing page |
+| `/corporate-headshots` | Corporate persona |
+| `/school-volume` | School / volume persona |
+| `/event-photo-booths` | Event / photo booth persona |
+| `/family-sessions` | Family / mini sessions persona |
+| `/beginner-photographers` | Beginner photographer persona |
+
+## Setup
+
+1. Copy env template:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cp .env.example .env.local
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. In Shopify Admin → **Sales channels → Headless** (or Storefront API), create a Storefront access token with product + cart scopes for shop `c767d9.myshopify.com` (failupinc.com).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Fill `.env.local`:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+SHOPIFY_STORE_DOMAIN=c767d9.myshopify.com
+SHOPIFY_STOREFRONT_ACCESS_TOKEN=shpat_or_storefront_token_here
+SHOPIFY_API_VERSION=2025-04
+NEXT_PUBLIC_SITE_URL=https://poseperfectmats.com
+NEXT_PUBLIC_SHOPIFY_STOREFRONT_URL=https://failupinc.com
+```
 
-## Learn More
+Without a token, CTAs fall back to Fail Up Inc. product pages so the site still demos.
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm install
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy to Vercel + poseperfectmats.com
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Push this repo to GitHub.
+2. Import the project in Vercel.
+3. Add the same env vars in Vercel Project Settings.
+4. **Domains** → Add `poseperfectmats.com` and `www.poseperfectmats.com`.
+5. At your DNS host for poseperfectmats.com:
+   - Apex: Vercel A record `76.76.21.21` (or ALIAS/ANAME per Vercel UI)
+   - `www`: CNAME to `cname.vercel-dns.com` (confirm values in Vercel domain panel)
+6. After DNS verifies, set production URL in env `NEXT_PUBLIC_SITE_URL=https://poseperfectmats.com`.
 
-## Deploy on Vercel
+Checkout still opens Fail Up Inc. Shopify hosted checkout (`cart.checkoutUrl`) after cart handoff.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Catalog
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Mats:** Unbranded Standard ($54.99), Branded Standard ($44.99), Junior Unbranded ($54.99), Posing Guide ebook ($19.97)
+
+**Bundles:** Family & Volume Pack ($94.99), Mat + Guide ($67.47)
+
+**Excluded:** Wear + Pose, On-Set Starter
+
+**Volume Builder:** 2–5 mats at 15–30% (matches live store widget; discount applied by Shopify automatic discounts at checkout when configured)
+
+## Social proof
+
+Loox stats on-site: **213 verified reviews · 4.6★** (not the inflated 1,258 badge on the product template). Ambassadors: `@jaquieohh`, `@shootwithray`, `@joeywrightphoto`.
