@@ -32,7 +32,9 @@ export default function HomePage() {
       <LooxPhotoWall />
       <LooxReviews reviews={reviewsForPersona("general", 6)} />
       <FAQ />
-      <FinalCTA cta={<CheckoutButton label="Get PosePerfect Mat — $54.99" />} />
+      <FinalCTA
+        cta={<CheckoutButton label="Add PosePerfect Mat™ — $54.99" />}
+      />
       <StickyCta />
     </>
   );

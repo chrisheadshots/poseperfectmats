@@ -1,22 +1,28 @@
 import { NextResponse } from "next/server";
-import type { CatalogItemId } from "@/lib/catalog/catalog";
-import { addItemsToCart } from "@/lib/shopify/checkout";
+import { updateCartLineQuantities } from "@/lib/shopify/checkout";
 
 export async function POST(request: Request) {
   try {
     const body = (await request.json()) as {
-      lines?: Array<{ itemId: CatalogItemId; quantity: number }>;
-      itemId?: CatalogItemId;
+      lines?: Array<{ id: string; quantity: number }>;
+      lineId?: string;
       quantity?: number;
     };
 
     const lines =
       body.lines ??
-      (body.itemId
-        ? [{ itemId: body.itemId, quantity: Math.max(1, body.quantity ?? 1) }]
+      (body.lineId != null && body.quantity != null
+        ? [{ id: body.lineId, quantity: body.quantity }]
         : []);
 
-    const result = await addItemsToCart(lines);
+    if (!lines.length) {
+      return NextResponse.json(
+        { ok: false, error: "No line updates provided" },
+        { status: 400 },
+      );
+    }
+
+    const result = await updateCartLineQuantities(lines);
     if (!result.ok) {
       return NextResponse.json(result, { status: 400 });
     }

@@ -14,7 +14,8 @@ import {
   type CatalogItemId,
   type PersonaKey,
 } from "@/lib/catalog/catalog";
-import { useCheckout } from "@/lib/hooks/useCheckout";
+import { useCart } from "@/components/cart/CartProvider";
+import { QuantityStepper } from "@/components/cart/QuantityStepper";
 import { Price } from "@/components/CheckoutButton";
 
 type Tab = "versions" | "bundles" | "volume";
@@ -34,11 +35,12 @@ export function OfferCatalog({ persona = "master" }: Props) {
 
   const [tab, setTab] = useState<Tab>(initialTab);
   const [selected, setSelected] = useState<CatalogItemId>(defaults.itemId);
+  const [versionQty, setVersionQty] = useState(1);
   const [volumeId, setVolumeId] = useState<CatalogItemId>(
     defaults.mode === "volume" ? defaults.itemId : "standard-unbranded",
   );
   const [qty, setQty] = useState(defaults.mode === "volume" ? defaults.qty : 3);
-  const { checkout, pending, error } = useCheckout();
+  const { addItem, pending, error } = useCart();
 
   const estimate = useMemo(
     () => volumeEstimate(volumeId, qty),
@@ -58,8 +60,8 @@ export function OfferCatalog({ persona = "master" }: Props) {
         </h2>
         <p className="mt-3 max-w-2xl text-muted">
           Choose Unbranded or Branded Standard, Junior for kids stations, or
-          grab a ready bundle. Multi-buy tiers match the live Fail Up Inc. offer
-          (2–5 mats).
+          grab a ready bundle. Set your quantity, add to cart, then checkout when
+          you&apos;re ready.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-2">
@@ -134,17 +136,30 @@ export function OfferCatalog({ persona = "master" }: Props) {
               <div>
                 <p className="font-medium">{selectedItem.title}</p>
                 <p className="text-sm text-white/60">
-                  Headless checkout via Fail Up Inc. Shopify
+                  Add to cart · Shopify checkout via Fail Up Inc.
                 </p>
               </div>
-              <button
-                type="button"
-                disabled={pending}
-                onClick={() => checkout({ itemId: selected, quantity: 1 })}
-                className="rounded-full bg-yellow px-5 py-3 text-sm font-semibold text-ink disabled:opacity-60"
-              >
-                {pending ? "Loading…" : `Buy ${formatMoney(selectedItem.priceCents)}`}
-              </button>
+              <div className="flex flex-wrap items-center gap-3">
+                <QuantityStepper
+                  value={versionQty}
+                  min={1}
+                  max={20}
+                  onChange={setVersionQty}
+                  tone="dark"
+                />
+                <button
+                  type="button"
+                  disabled={pending}
+                  onClick={() =>
+                    void addItem({ itemId: selected, quantity: versionQty })
+                  }
+                  className="rounded-full bg-yellow px-5 py-3 text-sm font-semibold text-ink disabled:opacity-60"
+                >
+                  {pending
+                    ? "Adding…"
+                    : `Add ${formatMoney(selectedItem.priceCents * versionQty)}`}
+                </button>
+              </div>
             </div>
           </div>
         ) : null}
@@ -154,43 +169,12 @@ export function OfferCatalog({ persona = "master" }: Props) {
             {BUNDLE_IDS.map((id) => {
               const item = CATALOG[id];
               return (
-                <div
+                <BundleCard
                   key={id}
-                  className="flex flex-col rounded-2xl border border-line bg-white p-5"
-                >
-                  <div className="relative mb-4 h-40 overflow-hidden rounded-xl bg-paper">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      fill
-                      className="object-contain p-3"
-                      sizes="400px"
-                    />
-                  </div>
-                  {item.badge ? (
-                    <span className="mb-2 w-fit rounded-full bg-yellow/80 px-2 py-0.5 text-[11px] font-semibold">
-                      {item.badge}
-                    </span>
-                  ) : null}
-                  <h3 className="text-xl font-semibold">{item.shortTitle}</h3>
-                  <p className="mt-2 flex-1 text-sm text-muted">
-                    {item.description}
-                  </p>
-                  <div className="mt-4 flex items-center justify-between gap-3">
-                    <Price
-                      cents={item.priceCents}
-                      compareAtCents={item.compareAtCents}
-                    />
-                    <button
-                      type="button"
-                      disabled={pending}
-                      onClick={() => checkout({ itemId: id, quantity: 1 })}
-                      className="rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white hover:bg-ink-soft disabled:opacity-60"
-                    >
-                      {pending ? "…" : "Add bundle"}
-                    </button>
-                  </div>
-                </div>
+                  itemId={id}
+                  pending={pending}
+                  onAdd={(quantity) => void addItem({ itemId: id, quantity })}
+                />
               );
             })}
           </div>
@@ -222,27 +206,33 @@ export function OfferCatalog({ persona = "master" }: Props) {
                     ))}
                   </select>
                 </label>
-                <label className="block text-sm font-medium">
-                  Quantity
-                  <input
-                    type="range"
-                    min={2}
-                    max={5}
-                    value={qty}
-                    onChange={(e) => setQty(Number(e.target.value))}
-                    className="mt-3 w-full accent-yellow-deep"
-                  />
-                  <div className="mt-2 flex justify-between text-xs text-muted">
-                    {VOLUME_TIERS.map((t) => (
-                      <span
-                        key={t.qty}
-                        className={qty === t.qty ? "font-semibold text-ink" : ""}
-                      >
-                        {t.qty} · {t.percentOff}%
-                      </span>
-                    ))}
+                <div>
+                  <p className="text-sm font-medium">Quantity</p>
+                  <div className="mt-3 flex flex-wrap items-center gap-4">
+                    <QuantityStepper
+                      value={qty}
+                      min={2}
+                      max={5}
+                      onChange={setQty}
+                    />
+                    <div className="flex flex-wrap gap-2 text-xs text-muted">
+                      {VOLUME_TIERS.map((t) => (
+                        <button
+                          key={t.qty}
+                          type="button"
+                          onClick={() => setQty(t.qty)}
+                          className={`rounded-full px-2.5 py-1 ${
+                            qty === t.qty
+                              ? "bg-ink font-semibold text-white"
+                              : "bg-paper"
+                          }`}
+                        >
+                          {t.qty} · {t.percentOff}%
+                        </button>
+                      ))}
+                    </div>
                   </div>
-                </label>
+                </div>
               </div>
               <div className="rounded-2xl bg-ink p-5 text-white md:min-w-[240px]">
                 <p className="text-sm text-white/60">Est. pack total</p>
@@ -257,11 +247,11 @@ export function OfferCatalog({ persona = "master" }: Props) {
                   type="button"
                   disabled={pending}
                   onClick={() =>
-                    checkout({ itemId: volumeId, quantity: qty })
+                    void addItem({ itemId: volumeId, quantity: qty })
                   }
                   className="mt-5 w-full rounded-full bg-yellow py-3 text-sm font-semibold text-ink disabled:opacity-60"
                 >
-                  {pending ? "Loading…" : "Checkout pack"}
+                  {pending ? "Adding…" : "Add pack to cart"}
                 </button>
               </div>
             </div>
@@ -271,5 +261,53 @@ export function OfferCatalog({ persona = "master" }: Props) {
         {error ? <p className="mt-4 text-sm text-red-700">{error}</p> : null}
       </div>
     </section>
+  );
+}
+
+function BundleCard({
+  itemId,
+  pending,
+  onAdd,
+}: {
+  itemId: CatalogItemId;
+  pending: boolean;
+  onAdd: (quantity: number) => void;
+}) {
+  const item = CATALOG[itemId];
+  const [quantity, setQuantity] = useState(1);
+
+  return (
+    <div className="flex flex-col rounded-2xl border border-line bg-white p-5">
+      <div className="relative mb-4 h-40 overflow-hidden rounded-xl bg-paper">
+        <Image
+          src={item.image}
+          alt={item.title}
+          fill
+          className="object-contain p-3"
+          sizes="400px"
+        />
+      </div>
+      {item.badge ? (
+        <span className="mb-2 w-fit rounded-full bg-yellow/80 px-2 py-0.5 text-[11px] font-semibold">
+          {item.badge}
+        </span>
+      ) : null}
+      <h3 className="text-xl font-semibold">{item.shortTitle}</h3>
+      <p className="mt-2 flex-1 text-sm text-muted">{item.description}</p>
+      <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
+        <Price cents={item.priceCents} compareAtCents={item.compareAtCents} />
+        <div className="flex flex-wrap items-center gap-2">
+          <QuantityStepper value={quantity} onChange={setQuantity} />
+          <button
+            type="button"
+            disabled={pending}
+            onClick={() => onAdd(quantity)}
+            className="rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white hover:bg-ink-soft disabled:opacity-60"
+          >
+            {pending ? "…" : "Add to cart"}
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }

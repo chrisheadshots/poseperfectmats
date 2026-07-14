@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Fraunces, DM_Sans } from "next/font/google";
+import { CartDrawer } from "@/components/cart/CartDrawer";
+import { CartProvider } from "@/components/cart/CartProvider";
+import { MetaPixel } from "@/components/MetaPixel";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { JsonLd } from "@/components/JsonLd";
@@ -18,19 +21,59 @@ const body = DM_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
+const seoDescription = `${SITE.heroSubheadline} Shop authentic PosePerfect Mat™ products powered by Fail Up Inc., with Standard, Junior, bundles, and verified Loox social proof.`;
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: "PosePerfect Mat — Stop Repositioning Every Client",
-    template: "%s · PosePerfect Mat",
+    default: "PosePerfect Mat™ — Stop Repositioning Every Client",
+    template: "%s · PosePerfect Mat™",
   },
-  description: SITE.heroSubheadline,
+  description: seoDescription,
+  applicationName: SITE.name,
+  authors: [{ name: "Fail Up Inc." }, { name: "Chris Headshots" }],
+  creator: "Fail Up Inc.",
+  publisher: "Fail Up Inc.",
+  category: "Photography equipment",
+  keywords: [
+    "PosePerfect Mat",
+    "PosePerfect Mat™",
+    "posing mat for photographers",
+    "headshot posing guide",
+    "school photography mat",
+    "photo booth positioning mat",
+    "Chris Headshots",
+    "Fail Up Inc",
+  ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "PosePerfect Mat",
-    description: SITE.heroSubheadline,
+    title: "PosePerfect Mat™ — Stop Repositioning Every Client",
+    description: seoDescription,
     url: SITE.url,
-    siteName: "PosePerfect Mat",
+    siteName: SITE.name,
+    locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PosePerfect Mat™ — Stop Repositioning Every Client",
+    description: SITE.heroSubheadline,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  other: {
+    "ai-content-declaration": "human-created marketing site with structured product data",
   },
 };
 
@@ -42,10 +85,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${display.variable} ${body.variable} h-full`}>
       <body className="min-h-full flex flex-col antialiased">
-        <JsonLd />
-        <SiteHeader />
-        <main className="flex-1">{children}</main>
-        <SiteFooter />
+        <CartProvider>
+          <JsonLd />
+          <MetaPixel />
+          <SiteHeader />
+          <main className="flex-1">{children}</main>
+          <SiteFooter />
+          <CartDrawer />
+        </CartProvider>
       </body>
     </html>
   );

@@ -21,14 +21,14 @@ export type PersonaCopy = {
 };
 
 export const SITE = {
-  name: "PosePerfect Mat",
+  name: "PosePerfect Mat™",
   url: "https://poseperfectmats.com",
   poweredBy: "Powered by Fail Up Inc.",
   heroHeadline:
     "Stop Repositioning Every Client. Put Their Feet Where the Perfect Shot Starts.",
   heroSubheadline:
-    "PosePerfect Mat uses color-coded footprint guides to help groups and headshot clients stand correctly in seconds — so you spend less time saying “step left” and more time capturing usable photos.",
-  primaryCta: "Get PosePerfect Mat — $54.99",
+    "PosePerfect Mat™ uses color-coded footprint guides to help groups and headshot clients stand correctly in seconds — so you spend less time saying “step left” and more time capturing usable photos.",
+  primaryCta: "Add PosePerfect Mat™ — $54.99",
   secondaryCta: "See how it works",
 } as const;
 

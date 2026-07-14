@@ -10,7 +10,7 @@ type Props = {
 };
 
 export function StickyCta({
-  label = "Get PosePerfect Mat — $54.99",
+  label = "Add PosePerfect Mat™ — $54.99",
   itemId = "standard-unbranded",
 }: Props) {
   const [show, setShow] = useState(false);
@@ -26,8 +26,13 @@ export function StickyCta({
 
   return (
     <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-ink/95 p-3 backdrop-blur md:hidden">
-      <div className="mx-auto flex max-w-lg justify-center">
-        <CheckoutButton label={label} itemId={itemId} className="w-full text-center" />
+      <div className="mx-auto flex w-full max-w-lg justify-center">
+        <CheckoutButton
+          label={label}
+          itemId={itemId}
+          showQty={false}
+          className="w-full [&_button]:w-full"
+        />
       </div>
     </div>
   );

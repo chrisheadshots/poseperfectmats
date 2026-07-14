@@ -8,7 +8,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <p className="font-[family-name:var(--font-display)] text-3xl">
-            PosePerfect Mat
+            {SITE.name}
           </p>
           <p className="mt-3 max-w-sm text-sm text-white/65">
             The anti-awkward, time-saving posing system for photographers who
@@ -59,11 +59,28 @@ export function SiteFooter() {
                 failupinc.com
               </a>
             </li>
+            <li>
+              <Link href="/privacy" className="hover:text-yellow">
+                Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <Link href="/trademark" className="hover:text-yellow">
+                Trademark Information
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
       <div className="border-t border-white/10 px-4 py-4 text-center text-xs text-white/40">
-        © {new Date().getFullYear()} PosePerfect Mat · {SITE.poweredBy}
+        © {new Date().getFullYear()} {SITE.name} · {SITE.poweredBy} ·{" "}
+        <Link href="/privacy" className="hover:text-white/70">
+          Privacy
+        </Link>{" "}
+        ·{" "}
+        <Link href="/trademark" className="hover:text-white/70">
+          Trademark
+        </Link>
       </div>
     </footer>
   );

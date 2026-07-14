@@ -1,6 +1,6 @@
 "use client";
 
-import { useCheckout } from "@/lib/hooks/useCheckout";
+import { AddToCartButton } from "@/components/AddToCartButton";
 import type { CatalogItemId } from "@/lib/catalog/catalog";
 import { formatMoney } from "@/lib/catalog/catalog";
 
@@ -9,28 +9,25 @@ type Props = {
   itemId?: CatalogItemId;
   quantity?: number;
   className?: string;
+  showQty?: boolean;
 };
 
+/** Primary product CTA — adds to Shopify cart with optional quantity. */
 export function CheckoutButton({
   label = "Add to cart",
   itemId = "standard-unbranded",
   quantity = 1,
   className = "",
+  showQty = true,
 }: Props) {
-  const { checkout, pending, error } = useCheckout();
-
   return (
-    <div className="inline-flex flex-col items-start gap-1">
-      <button
-        type="button"
-        disabled={pending}
-        onClick={() => checkout({ itemId, quantity })}
-        className={`rounded-full bg-yellow px-6 py-3 text-sm font-semibold text-ink transition hover:bg-yellow-deep disabled:opacity-60 ${className}`}
-      >
-        {pending ? "Taking you to checkout…" : label}
-      </button>
-      {error ? <span className="text-xs text-red-700">{error}</span> : null}
-    </div>
+    <AddToCartButton
+      label={label}
+      itemId={itemId}
+      quantity={quantity}
+      showQty={showQty}
+      buttonClassName={className}
+    />
   );
 }
 
