@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { LOOX_STATS } from "@/lib/reviews/reviews";
+import { LOOX_STATS, ORDER_STATS } from "@/lib/reviews/reviews";
 import { SITE } from "@/lib/copy/personas";
 import { CheckoutButton } from "@/components/CheckoutButton";
 import type { CatalogItemId } from "@/lib/catalog/catalog";
@@ -70,8 +70,8 @@ export function Hero({
             </a>
           </motion.div>
           <p className="mt-6 text-sm text-white/55">
-            {LOOX_STATS.count} verified Loox reviews · {LOOX_STATS.average}★ ·
-            30-day support path · Free tracked shipping ·{" "}
+            {LOOX_STATS.count} verified Loox reviews · {LOOX_STATS.average}★ ·{" "}
+            {ORDER_STATS.label} · 30-day support path · Free US shipping ·{" "}
             <a
               href={SITE.instagramUrl}
               target="_blank"

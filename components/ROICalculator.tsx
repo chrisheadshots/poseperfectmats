@@ -2,17 +2,31 @@
 
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { formatMoney } from "@/lib/catalog/catalog";
+import { CATALOG, formatMoney, type CatalogItemId } from "@/lib/catalog/catalog";
+import type { RoiDefaults } from "@/lib/copy/personas";
 import { AddToCartButton } from "@/components/AddToCartButton";
 import { Reveal } from "@/components/motion/Reveal";
 
-const MAT_COST = 54.99;
+type Props = {
+  /** Persona-tuned starting inputs; master defaults when omitted. */
+  defaults?: RoiDefaults;
+  /** Catalog item used for price, payback math, and the CTA. */
+  itemId?: CatalogItemId;
+};
 
-export function ROICalculator() {
-  const [subjects, setSubjects] = useState(40);
-  const [minutesWasted, setMinutesWasted] = useState(5);
-  const [hourly, setHourly] = useState(150);
-  const [jobsPerMonth, setJobsPerMonth] = useState(8);
+export function ROICalculator({ defaults, itemId = "standard-branded" }: Props) {
+  const item = CATALOG[itemId];
+  const matCost = item.priceCents / 100;
+  const subjectsLabel =
+    defaults?.subjectsLabel ?? "People photographed / job";
+  const [subjects, setSubjects] = useState(defaults?.subjects ?? 40);
+  const [minutesWasted, setMinutesWasted] = useState(
+    defaults?.minutesSavedPerSubject ?? 5,
+  );
+  const [hourly, setHourly] = useState(defaults?.hourlyValue ?? 150);
+  const [jobsPerMonth, setJobsPerMonth] = useState(
+    defaults?.jobsPerMonth ?? 8,
+  );
 
   const result = useMemo(() => {
     const hoursPerJob = (subjects * minutesWasted) / 60;
@@ -26,7 +40,7 @@ export function ROICalculator() {
     const monthlyHours = hoursPerJob * jobsPerMonth;
     const monthlyMoney = moneyPerJob * jobsPerMonth;
     const annualRevenue = monthlyMoney * 12;
-    const paybackJobs = moneyPerJob > 0 ? MAT_COST / moneyPerJob : Infinity;
+    const paybackJobs = moneyPerJob > 0 ? matCost / moneyPerJob : Infinity;
     return {
       hoursPerJob,
       moneyPerJob,
@@ -36,7 +50,7 @@ export function ROICalculator() {
       annualRevenue,
       paybackJobs,
     };
-  }, [subjects, minutesWasted, hourly, jobsPerMonth]);
+  }, [subjects, minutesWasted, hourly, jobsPerMonth, matCost]);
 
   return (
     <section id="roi" className="scroll-mt-20 py-20">
@@ -66,7 +80,7 @@ export function ROICalculator() {
             <div className="rounded-[1.75rem] border border-line bg-white p-6 shadow-[0_20px_60px_rgba(12,12,12,0.06)] sm:p-8">
               <div className="grid gap-5 sm:grid-cols-2">
                 <Field
-                  label="People photographed / job"
+                  label={subjectsLabel}
                   value={subjects}
                   min={1}
                   onChange={setSubjects}
@@ -114,7 +128,8 @@ export function ROICalculator() {
               </div>
 
               <p className="mt-4 text-sm text-muted">
-                Payback on the $54.99 Unbranded mat:{" "}
+                Payback on the {formatMoney(item.priceCents)}{" "}
+                {item.shortTitle}:{" "}
                 <span className="font-semibold text-ink">
                   {Number.isFinite(result.paybackJobs)
                     ? `${Math.max(0.1, result.paybackJobs).toFixed(1)} jobs`
@@ -125,7 +140,10 @@ export function ROICalculator() {
               </p>
 
               <div className="mt-6">
-                <AddToCartButton label="Add the $54.99 Unbranded mat" />
+                <AddToCartButton
+                  itemId={itemId}
+                  label={`Add the ${formatMoney(item.priceCents)} ${item.shortTitle}`}
+                />
               </div>
             </div>
           </Reveal>

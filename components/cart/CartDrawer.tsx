@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 import { CATALOG } from "@/lib/catalog/catalog";
+import { TrustAssurance } from "@/components/TrustAssurance";
 import { useCart } from "./CartProvider";
 import { QuantityStepper } from "./QuantityStepper";
 
@@ -172,6 +173,7 @@ export function CartDrawer() {
           <p className="mt-1 text-xs text-muted">
             Taxes and shipping calculated at Fail Up Inc. Shopify checkout.
           </p>
+          <TrustAssurance className="mt-3" />
           <button
             type="button"
             disabled={pending || lines.length === 0}

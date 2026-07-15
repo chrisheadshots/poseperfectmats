@@ -1,7 +1,12 @@
 "use client";
 
 import { Reveal } from "@/components/motion/Reveal";
-import { CASE_STUDY, LOOX_STATS, REVIEWS } from "@/lib/reviews/reviews";
+import {
+  CASE_STUDY,
+  LOOX_STATS,
+  ORDER_STATS,
+  REVIEWS,
+} from "@/lib/reviews/reviews";
 
 export function CostOfDoingNothing() {
   return (
@@ -157,8 +162,8 @@ export function WhyItWorks() {
         </div>
         <Reveal delay={0.1}>
           <p className="mt-10 text-sm text-muted">
-            Built for hardwood, carpet, concrete, and tile · Anti-slip rubber
-            backing · Wipe-clean · Rated for 1000+ sessions ·{" "}
+            Built for hardwood, concrete, tile, and low-pile carpet ·
+            Anti-slip rubber backing · Wipe-clean · Rated for 1000+ sessions ·{" "}
             {LOOX_STATS.count} verified buyer reviews
           </p>
         </Reveal>
@@ -185,6 +190,26 @@ export function ContextualProof() {
           <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl tracking-tight sm:text-4xl">
             Photographers describing the same pain — then the same fix.
           </h2>
+          <div className="mt-6 flex flex-wrap gap-6 text-sm text-muted">
+            <span>
+              <span className="font-[family-name:var(--font-display)] text-2xl text-ink">
+                {LOOX_STATS.count}
+              </span>{" "}
+              verified Loox reviews
+            </span>
+            <span>
+              <span className="font-[family-name:var(--font-display)] text-2xl text-ink">
+                {LOOX_STATS.average}★
+              </span>{" "}
+              average rating
+            </span>
+            <span>
+              <span className="font-[family-name:var(--font-display)] text-2xl text-ink">
+                {ORDER_STATS.label.split(" ")[0]}
+              </span>{" "}
+              orders shipped
+            </span>
+          </div>
         </Reveal>
         <div className="mt-8 grid gap-4 md:grid-cols-2">
           {picks.map((review, i) =>
@@ -224,6 +249,14 @@ export function Objections() {
     {
       q: "Is this only for volume?",
       a: "Volume operators feel ROI first — but branded headshot studios love the “stand on blue” clarity that kills awkward silence.",
+    },
+    {
+      q: "Will the print wear out?",
+      a: "Reviewers who store it tightly rolled for long stretches report cracking or fading. Store it flat or loosely rolled print-side out and wipe clean — volume shooters run it through back-to-back picture days.",
+    },
+    {
+      q: "When will it actually arrive?",
+      a: "US orders ship free on the economy tier — typically 5–7 business days after 3–5 days of processing. International orders are carrier-calculated and can sit in customs, so order well ahead of a booked shoot.",
     },
   ];
 

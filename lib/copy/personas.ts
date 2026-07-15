@@ -30,7 +30,7 @@ export const SITE = {
     "Stop Repositioning Every Client. Put Their Feet Where the Perfect Shot Starts.",
   heroSubheadline:
     "PosePerfect Mat™ is the physical SOP for photographers who shoot people for a living — color-coded footprints so clients stand correctly in seconds, the line keeps moving, and you stop burning billable minutes on the same five instructions.",
-  primaryCta: "Add PosePerfect Mat™ — $54.99",
+  primaryCta: "Add PosePerfect Mat™ — $44.99",
   secondaryCta: "See the system",
 } as const;
 
@@ -48,7 +48,7 @@ export const MASTER_FAQS: FaqItem[] = [
   {
     question: "Branded vs Unbranded — which should I buy?",
     answer:
-      "Unbranded ($54.99) keeps a clean studio look with no logo. Branded ($44.99) is the best value if you do not mind Chris Headshots branding on the mat.",
+      "Branded ($44.99) is the most popular pick — 135 verified Loox reviews at 4.7★ and the lowest price. Unbranded ($54.99) keeps a clean, logo-free look for premium studios and full-length framing; buyers specifically praise the option to remove the logo.",
   },
   {
     question: "Is it better than tape or floor dots?",
@@ -58,12 +58,22 @@ export const MASTER_FAQS: FaqItem[] = [
   {
     question: "What surfaces does it work on?",
     answer:
-      "Professional-grade anti-slip rubber backing is designed for hardwood, carpet, concrete, and tile. Wipe clean between sessions.",
+      "Anti-slip rubber backing grips best on hardwood, concrete, tile, and low-pile carpet. On plush carpet a few reviewers note slight shifting — press it flat and reposition between groups, or gaffer-tape the corners for all-day stations. Wipe clean between sessions.",
   },
   {
-    question: "How durable is it?",
+    question: "How durable is it, and how should I store it?",
     answer:
-      "Built for studio-quality use across 1000+ photo sessions. Many volume shooters keep a spare for heavy picture-day seasons.",
+      "Built for back-to-back picture days — many volume shooters keep a spare for heavy seasons. To protect the print, store it flat or loosely rolled print-side out; the most common complaint in critical reviews is cracking or fading after long storage tightly rolled. Wipe clean with a soft damp cloth.",
+  },
+  {
+    question: "How long does shipping take?",
+    answer:
+      "US orders ship free on the economy tier, typically arriving within 5–7 business days after 3–5 days of processing. International orders (27 countries via USPS/DHL) are calculated at checkout and can add customs time — several reviewers recommend ordering well ahead of a booked shoot.",
+  },
+  {
+    question: "What if the stance feels too wide for a client?",
+    answer:
+      "The yellow footprints mark the widest stance. For petite clients or a narrower look, cue the inner edge of the yellow feet — same turn, tighter base. Reviewers use this exact adjustment for smaller-framed clients.",
   },
   {
     question: "Do quantity discounts and bundles work at checkout?",
@@ -73,7 +83,7 @@ export const MASTER_FAQS: FaqItem[] = [
   {
     question: "What is your return policy?",
     answer:
-      "The product page offers a 30-day money-back style trial with free tracked shipping messaging. Fail Up Inc.’s global refund policy historically restricted returns on sale items — if you need a return, contact support@failupinc.com promptly with your order so they can honor the product-page guarantee language.",
+      "The product page offers a 30-day money-back style trial. Fail Up Inc.’s global refund policy historically restricted returns on sale items — if you need a return, contact support@failupinc.com promptly with your order so they can honor the product-page guarantee language. Buyers with damaged prints report receiving free replacements.",
   },
 ];
 
@@ -108,7 +118,7 @@ export const PERSONAS: Record<Exclude<PersonaKey, "master">, PersonaCopy> = {
       {
         question: "Does it work on carpeted conference rooms?",
         answer:
-          "Anti-slip backing is designed for carpet as well as hard floors. Set it once and keep the queue moving.",
+          "Anti-slip backing grips low-pile office carpet well. On plush carpet, press it flat and reposition between groups — or gaffer-tape the corners for an all-day station.",
       },
     ],
   },
@@ -209,6 +219,11 @@ export const PERSONAS: Record<Exclude<PersonaKey, "master">, PersonaCopy> = {
         answer:
           "Wipe-clean polyester surface — built for back-to-back mini days.",
       },
+      {
+        question: "What if the stance is too wide for kids or petite parents?",
+        answer:
+          "Cue the inner edge of the yellow footprints for a narrower base, or use the Junior mat for smaller subjects — same turn, tighter stance.",
+      },
     ],
   },
   beginner: {
@@ -247,3 +262,56 @@ export const PERSONAS: Record<Exclude<PersonaKey, "master">, PersonaCopy> = {
 };
 
 export const PERSONA_LIST = Object.values(PERSONAS);
+
+export type RoiDefaults = {
+  subjects: number;
+  minutesSavedPerSubject: number;
+  hourlyValue: number;
+  jobsPerMonth: number;
+  subjectsLabel?: string;
+};
+
+/**
+ * Persona-tuned ROI calculator defaults. Minutes-saved stays inside the
+ * 1–2 min/headshot range verified buyers report (Brian W., Brian, Terry G.).
+ */
+export const PERSONA_ROI_DEFAULTS: Record<
+  Exclude<PersonaKey, "master">,
+  RoiDefaults
+> = {
+  corporate: {
+    subjects: 150,
+    minutesSavedPerSubject: 2,
+    hourlyValue: 150,
+    jobsPerMonth: 2,
+    subjectsLabel: "Employees per headshot day",
+  },
+  school: {
+    subjects: 300,
+    minutesSavedPerSubject: 1,
+    hourlyValue: 100,
+    jobsPerMonth: 4,
+    subjectsLabel: "Students per picture day",
+  },
+  events: {
+    subjects: 200,
+    minutesSavedPerSubject: 1,
+    hourlyValue: 125,
+    jobsPerMonth: 3,
+    subjectsLabel: "Guests per event",
+  },
+  family: {
+    subjects: 8,
+    minutesSavedPerSubject: 8,
+    hourlyValue: 175,
+    jobsPerMonth: 6,
+    subjectsLabel: "Mini sessions per day",
+  },
+  beginner: {
+    subjects: 10,
+    minutesSavedPerSubject: 5,
+    hourlyValue: 75,
+    jobsPerMonth: 4,
+    subjectsLabel: "Subjects per session",
+  },
+};

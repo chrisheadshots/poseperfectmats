@@ -1,10 +1,15 @@
 import { MASTER_FAQS, SITE } from "@/lib/copy/personas";
-import { LOOX_STATS, REVIEWS } from "@/lib/reviews/reviews";
+import { LOOX_STATS_BY_PRODUCT, REVIEWS } from "@/lib/reviews/reviews";
 import { CATALOG } from "@/lib/catalog/catalog";
 import { LOOX_VIDEOS } from "@/lib/reviews/loox-media";
 
 export function JsonLd() {
-  const product = CATALOG["standard-unbranded"];
+  const product = CATALOG["standard-branded"];
+  const productStats = LOOX_STATS_BY_PRODUCT["standard-branded"];
+  // Only reviews left on this exact product — schema must not blend products.
+  const productReviews = REVIEWS.filter(
+    (r) => r.product === "PosePerfect Mat™ by Chris Headshots",
+  ).slice(0, 5);
   const demo = LOOX_VIDEOS.find((v) => v.id === "r5seTpBe3") ?? LOOX_VIDEOS[0];
 
   const data = [
@@ -63,15 +68,15 @@ export function JsonLd() {
       },
       aggregateRating: {
         "@type": "AggregateRating",
-        ratingValue: LOOX_STATS.average,
-        reviewCount: LOOX_STATS.count,
+        ratingValue: productStats.average,
+        reviewCount: productStats.count,
         bestRating: "5",
         worstRating: "1",
       },
-      review: REVIEWS.slice(0, 5).map((r) => ({
+      review: productReviews.map((r) => ({
         "@type": "Review",
         author: { "@type": "Person", name: r.name },
-        datePublished: r.date,
+        ...(r.date ? { datePublished: r.date } : {}),
         reviewBody: r.body,
         reviewRating: {
           "@type": "Rating",

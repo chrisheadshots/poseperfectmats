@@ -17,7 +17,7 @@ type Props = {
 };
 
 export function AddToCartButton({
-  itemId = "standard-unbranded",
+  itemId = "standard-branded",
   quantity: initialQuantity = 1,
   label = "Add to cart",
   showQty = true,

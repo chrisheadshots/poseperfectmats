@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { AddToCartButton } from "@/components/AddToCartButton";
 import { LOOX_VIDEOS } from "@/lib/reviews/loox-media";
-import { LOOX_STATS } from "@/lib/reviews/reviews";
+import { LOOX_STATS, ORDER_STATS } from "@/lib/reviews/reviews";
 import { SITE } from "@/lib/copy/personas";
 
 type Scene = {
@@ -238,6 +238,7 @@ export function HeroDemo() {
           </motion.div>
           <p className="mt-3 text-[11px] leading-relaxed text-white/55 sm:mt-6 sm:text-sm">
             {LOOX_STATS.count} verified Loox · {LOOX_STATS.average}★ ·{" "}
+            {ORDER_STATS.label} ·{" "}
             <a
               href={SITE.instagramUrl}
               target="_blank"

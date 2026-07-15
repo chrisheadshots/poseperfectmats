@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { PERSONA_LIST, SITE } from "@/lib/copy/personas";
-import { LOOX_STATS } from "@/lib/reviews/reviews";
+import { LOOX_STATS, ORDER_STATS } from "@/lib/reviews/reviews";
 
 export function SiteFooter() {
   return (
@@ -51,7 +51,7 @@ export function SiteFooter() {
           </a>
           <p className="mt-2 text-xs text-white/45">
             {LOOX_STATS.count} verified Loox reviews · {LOOX_STATS.average}★
-            average
+            average · {ORDER_STATS.label}
           </p>
         </div>
         <div>

@@ -49,7 +49,7 @@ export default function HomePage() {
       <FinalCTA
         title="Install the workflow on your next shoot."
         body="Join photographers who treat posing as operations. Add PosePerfect Mat™, stack Junior + the guide as you grow, and if it doesn’t make positioning faster, contact Fail Up Inc. within 30 days about the product-page guarantee path."
-        cta={<CheckoutButton label="Add PosePerfect Mat™ — $54.99" />}
+        cta={<CheckoutButton label="Add PosePerfect Mat™ — $44.99" />}
       />
       <StickyCta />
     </>

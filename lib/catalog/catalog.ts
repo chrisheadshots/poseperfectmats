@@ -48,7 +48,7 @@ export const CATALOG: Record<CatalogItemId, CatalogItem> = {
       "18\" × 30\" color-coded footprint guides with no logo — clean for premium studios and on-camera framing.",
     image:
       "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/poseperfect-mat-hero.png?v=1782353205",
-    badge: "Most popular",
+    badge: "No logo — clean pro look",
   },
   "standard-branded": {
     id: "standard-branded",
@@ -59,9 +59,10 @@ export const CATALOG: Record<CatalogItemId, CatalogItem> = {
     priceCents: 4499,
     compareAtCents: 8999,
     description:
-      "Same professional stance system with Chris Headshots branding — best value for everyday headshot days.",
+      "Same professional stance system with Chris Headshots branding — the mat 1,600+ photographers picked, at the best price.",
     image:
       "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/2697318803232113874_2048.jpg?v=1774391759",
+    badge: "Most popular",
   },
   "junior-unbranded": {
     id: "junior-unbranded",
@@ -148,7 +149,7 @@ export type PersonaDefault =
   | { mode: "volume"; itemId: CatalogItemId; qty: number };
 
 export const PERSONA_DEFAULTS: Record<PersonaKey, PersonaDefault> = {
-  master: { mode: "item", itemId: "standard-unbranded" },
+  master: { mode: "item", itemId: "standard-branded" },
   corporate: { mode: "volume", itemId: "standard-unbranded", qty: 3 },
   school: { mode: "item", itemId: "family-volume-pack" },
   events: { mode: "item", itemId: "standard-unbranded" },

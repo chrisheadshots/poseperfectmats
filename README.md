@@ -65,4 +65,14 @@ Checkout still opens Fail Up Inc. Shopify hosted checkout (`cart.checkoutUrl`) a
 
 ## Social proof
 
-Loox stats on-site: **213 verified reviews · 4.6★** (not the inflated 1,258 badge on the product template). Ambassadors: `@jaquieohh`, `@shootwithray`, `@joeywrightphoto`.
+Loox stats on-site: **208 verified reviews · 4.6★** — pulled from the live `loox` product metafields on 2026-07-14 (branded 135 @ 4.7★, unbranded 63 @ 4.6★, Junior 3 @ 4.7★, guide 7 @ 4.3★; not the inflated 1,258 badge on the product template). Order proof: **2,900+ orders shipped** (2,973 all-time per Shopify analytics, same date). Ambassadors: `@jaquieohh`, `@shootwithray`, `@joeywrightphoto`.
+
+### Refreshing reviews
+
+Review content is a curated static snapshot in `lib/reviews/reviews.ts` — nothing is fetched from Loox at runtime.
+
+1. Run `SHOPIFY_ADMIN_TOKEN=shpat_... npm run refresh:reviews` (needs an Admin API token with `read_products`; the site's Storefront token cannot read metafields). This writes `lib/reviews/loox-source.json` and prints live counts vs the constants.
+2. Update `LOOX_STATS`, `LOOX_STATS_BY_PRODUCT`, and `ORDER_STATS` in `lib/reviews/reviews.ts`.
+3. Hand-pick new quotes into `REVIEWS` with persona tags — curation is editorial, keep quotes verbatim and never fabricate dates (omit `date` when the source has none).
+
+No Admin token? Pull the `loox` namespace metafields for the four PosePerfect products via the Shopify MCP (`graphql_query`) and update the constants by hand.

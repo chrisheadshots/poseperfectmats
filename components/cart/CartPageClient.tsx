@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CATALOG } from "@/lib/catalog/catalog";
+import { TrustAssurance } from "@/components/TrustAssurance";
 import { useCart } from "./CartProvider";
 import { QuantityStepper } from "./QuantityStepper";
 
@@ -137,6 +138,7 @@ export function CartPageClient() {
           <p className="mt-2 text-xs text-muted">
             Taxes and shipping calculated at Fail Up Inc. Shopify checkout.
           </p>
+          <TrustAssurance className="mt-3" />
           <button
             type="button"
             disabled={pending || lines.length === 0}

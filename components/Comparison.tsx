@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const ROWS = [
   {
     feature: "Shows exact foot placement",
@@ -43,9 +45,13 @@ function Cell({ value }: { value: boolean | "partial" }) {
   return <span className="text-muted">No</span>;
 }
 
-export function Comparison() {
+export function Comparison({ compact = false }: { compact?: boolean }) {
+  const rows = compact ? ROWS.slice(0, 3) : ROWS;
   return (
-    <section id="compare" className="scroll-mt-20 py-20">
+    <section
+      id={compact ? undefined : "compare"}
+      className={compact ? "py-16" : "scroll-mt-20 py-20"}
+    >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <p className="text-xs uppercase tracking-[0.18em] text-muted">
           Tape vs PosePerfect
@@ -69,7 +75,7 @@ export function Comparison() {
               </tr>
             </thead>
             <tbody>
-              {ROWS.map((row) => (
+              {rows.map((row) => (
                 <tr key={row.feature} className="border-b border-line/70">
                   <td className="px-4 py-3 font-medium">{row.feature}</td>
                   <td className="px-4 py-3 bg-yellow/15">
@@ -89,6 +95,16 @@ export function Comparison() {
             </tbody>
           </table>
         </div>
+        {compact ? (
+          <p className="mt-4 text-sm">
+            <Link
+              href="/#compare"
+              className="font-medium underline decoration-yellow underline-offset-4 hover:text-yellow-deep"
+            >
+              See the full comparison →
+            </Link>
+          </p>
+        ) : null}
       </div>
     </section>
   );

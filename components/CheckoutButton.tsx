@@ -15,7 +15,7 @@ type Props = {
 /** Primary product CTA — adds to Shopify cart with optional quantity. */
 export function CheckoutButton({
   label = "Add to cart",
-  itemId = "standard-unbranded",
+  itemId = "standard-branded",
   quantity = 1,
   className = "",
   showQty = true,

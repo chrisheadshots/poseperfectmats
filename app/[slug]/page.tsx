@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Ambassadors } from "@/components/Ambassadors";
 import { CheckoutButton } from "@/components/CheckoutButton";
+import { Comparison } from "@/components/Comparison";
 import { FAQ } from "@/components/FAQ";
 import { Hero } from "@/components/Hero";
 import { LooxPhotoWall } from "@/components/LooxPhotoWall";
 import { LooxReviews } from "@/components/LooxReviews";
 import { LooxVideoSlider } from "@/components/LooxVideoSlider";
 import { OfferCatalog } from "@/components/OfferCatalog";
+import { ROICalculator } from "@/components/ROICalculator";
 import {
   FinalCTA,
   HowItWorks,
@@ -18,8 +20,12 @@ import {
   PERSONA_DEFAULTS,
   type CatalogItemId,
 } from "@/lib/catalog/catalog";
-import { MASTER_FAQS, PERSONAS } from "@/lib/copy/personas";
-import { reviewsForPersona } from "@/lib/reviews/reviews";
+import {
+  MASTER_FAQS,
+  PERSONAS,
+  PERSONA_ROI_DEFAULTS,
+} from "@/lib/copy/personas";
+import { REVIEWS, reviewsForPersona } from "@/lib/reviews/reviews";
 
 const SLUG_TO_KEY = {
   "corporate-headshots": "corporate",
@@ -104,11 +110,21 @@ export default async function PersonaPage({
       />
       <ProblemSection title={persona.problemTitle} body={persona.problemBody} />
       <HowItWorks />
+      <ROICalculator
+        defaults={PERSONA_ROI_DEFAULTS[SLUG_TO_KEY[slug]]}
+        itemId={defaultItem}
+      />
       <LooxVideoSlider />
       <OfferCatalog persona={persona.key} />
+      {persona.key === "corporate" ||
+      persona.key === "school" ||
+      persona.key === "events" ? (
+        <Comparison compact />
+      ) : null}
       <LooxPhotoWall />
       <LooxReviews
-        reviews={reviewsForPersona(reviewTag, 3)}
+        reviews={reviewsForPersona(reviewTag, 4)}
+        spotlight={REVIEWS.find((r) => r.featured === reviewTag)}
         title={`Proof for ${persona.navLabel.toLowerCase()}`}
       />
       <Ambassadors />
