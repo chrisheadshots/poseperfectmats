@@ -10,6 +10,7 @@ import {
   VOLUME_ELIGIBLE_IDS,
   VOLUME_TIERS,
   formatMoney,
+  volumeDiscountForQty,
   volumeEstimate,
   type CatalogItemId,
   type PersonaKey,
@@ -36,6 +37,7 @@ export function OfferCatalog({ persona = "master" }: Props) {
   const [tab, setTab] = useState<Tab>(initialTab);
   const [selected, setSelected] = useState<CatalogItemId>(defaults.itemId);
   const [versionQty, setVersionQty] = useState(1);
+  const [attachGuide, setAttachGuide] = useState(false);
   const [volumeId, setVolumeId] = useState<CatalogItemId>(
     defaults.mode === "volume" ? defaults.itemId : "standard-unbranded",
   );
@@ -48,6 +50,13 @@ export function OfferCatalog({ persona = "master" }: Props) {
   );
 
   const selectedItem = CATALOG[selected];
+  const matVolumePercent =
+    selectedItem.kind === "mat" ? volumeDiscountForQty(versionQty) : 0;
+  const addBarTotal =
+    selectedItem.priceCents * versionQty +
+    (attachGuide && selectedItem.kind === "mat"
+      ? CATALOG["posing-guide"].priceCents
+      : 0);
 
   return (
     <section id="offers" className="scroll-mt-20 bg-paper-deep py-20">
@@ -132,60 +141,94 @@ export function OfferCatalog({ persona = "master" }: Props) {
                 </button>
               );
             })}
-            <div className="md:col-span-2 flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-ink px-5 py-4 text-white">
-              <div>
-                <p className="font-medium">{selectedItem.title}</p>
-                <p className="text-sm text-white/60">
-                  Add to cart · Shopify checkout via Fail Up Inc.
+            <div className="md:col-span-2 rounded-2xl bg-ink px-5 py-4 text-white">
+              <div className="flex flex-wrap items-center justify-between gap-4">
+                <div>
+                  <p className="font-medium">{selectedItem.title}</p>
+                  <p className="text-sm text-white/60">
+                    Add to cart · Shopify checkout via Fail Up Inc.
+                  </p>
+                </div>
+                <div className="flex flex-wrap items-center gap-3">
+                  <QuantityStepper
+                    value={versionQty}
+                    min={1}
+                    max={20}
+                    onChange={setVersionQty}
+                    tone="dark"
+                  />
+                  <button
+                    type="button"
+                    disabled={pending}
+                    onClick={() => {
+                      const canAttach =
+                        attachGuide && selectedItem.kind === "mat";
+                      if (canAttach) {
+                        void addItem({
+                          lines: [
+                            { itemId: selected, quantity: versionQty },
+                            { itemId: "posing-guide", quantity: 1 },
+                          ],
+                        });
+                      } else {
+                        void addItem({ itemId: selected, quantity: versionQty });
+                      }
+                    }}
+                    className="rounded-full bg-yellow px-5 py-3 text-sm font-semibold text-ink disabled:opacity-60"
+                  >
+                    {pending ? "Adding…" : `Add ${formatMoney(addBarTotal)}`}
+                  </button>
+                </div>
+              </div>
+
+              {selectedItem.kind === "mat" ? (
+                <label className="mt-3 flex cursor-pointer items-center gap-2 text-sm text-white/85">
+                  <input
+                    type="checkbox"
+                    checked={attachGuide}
+                    onChange={(e) => setAttachGuide(e.target.checked)}
+                    className="h-4 w-4 accent-yellow"
+                  />
+                  Add the Advanced Posing Guide ebook (+
+                  {formatMoney(CATALOG["posing-guide"].priceCents)}) — direction
+                  language that pairs with the mat
+                </label>
+              ) : null}
+
+              {selectedItem.kind === "mat" && versionQty === 1 ? (
+                <p className="mt-2 text-xs text-yellow">
+                  Add 1 more mat → save {VOLUME_TIERS[0].percentOff}% automatically
+                  at checkout.
                 </p>
-              </div>
-              <div className="flex flex-wrap items-center gap-3">
-                <QuantityStepper
-                  value={versionQty}
-                  min={1}
-                  max={20}
-                  onChange={setVersionQty}
-                  tone="dark"
-                />
-                <button
-                  type="button"
-                  disabled={pending}
-                  onClick={() =>
-                    void addItem({ itemId: selected, quantity: versionQty })
-                  }
-                  className="rounded-full bg-yellow px-5 py-3 text-sm font-semibold text-ink disabled:opacity-60"
-                >
-                  {pending
-                    ? "Adding…"
-                    : `Add ${formatMoney(selectedItem.priceCents * versionQty)}`}
-                </button>
-              </div>
+              ) : null}
+              {selectedItem.kind === "mat" && versionQty >= 2 ? (
+                <p className="mt-2 text-xs text-yellow">
+                  {versionQty} mats — {matVolumePercent}%+ off applies
+                  automatically at checkout.
+                </p>
+              ) : null}
             </div>
           </div>
         ) : null}
 
         {tab === "bundles" ? (
           <div className="mt-8 grid gap-4 md:grid-cols-2">
-            {BUNDLE_IDS.map((id) => {
-              const item = CATALOG[id];
-              return (
-                <BundleCard
-                  key={id}
-                  itemId={id}
-                  pending={pending}
-                  onAdd={(quantity) => void addItem({ itemId: id, quantity })}
-                />
-              );
-            })}
+            {BUNDLE_IDS.map((id) => (
+              <BundleCard
+                key={id}
+                itemId={id}
+                pending={pending}
+                onAdd={(quantity) => void addItem({ itemId: id, quantity })}
+              />
+            ))}
           </div>
         ) : null}
 
         {tab === "volume" ? (
           <div className="mt-8 rounded-2xl border border-line bg-white p-6">
             <p className="text-sm text-muted">
-              Mix Standard or Junior mats. Estimated savings reflect Fail Up
-              Inc.&apos;s live tiers — final discount applies at Shopify checkout
-              when automatic discounts are active.
+              Buy 2 or more mats and save at least 10% — applied automatically at
+              Shopify checkout, no code needed. Branded mats often save even more.
             </p>
             <div className="mt-6 grid gap-6 md:grid-cols-[1fr_auto]">
               <div className="space-y-4">

@@ -131,12 +131,14 @@ export const BUNDLE_IDS: CatalogItemId[] = [
   "mat-guide-bundle",
 ];
 
-export const VOLUME_TIERS: VolumeTier[] = [
-  { qty: 2, percentOff: 15 },
-  { qty: 3, percentOff: 20 },
-  { qty: 4, percentOff: 22 },
-  { qty: 5, percentOff: 30 },
-];
+/**
+ * Verified against live Storefront carts (2026-07-15): a "Buy 2+ mats, save 10%"
+ * automatic discount fires on every mat (unbranded, junior, mixed). Branded mats
+ * get MORE via a separate store "Bundle Discount" app (15% at 2, 25% at 3), so
+ * 10% is the honest floor we advertise — the site never displays a number higher
+ * than Shopify charges. Do not re-add a 15–30% ladder; it does not fire uniformly.
+ */
+export const VOLUME_TIERS: VolumeTier[] = [{ qty: 2, percentOff: 10 }];
 
 export const VOLUME_ELIGIBLE_IDS: CatalogItemId[] = [
   "standard-unbranded",

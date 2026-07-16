@@ -78,7 +78,7 @@ export const MASTER_FAQS: FaqItem[] = [
   {
     question: "Do quantity discounts and bundles work at checkout?",
     answer:
-      "Family & Volume Pack and Mat + Guide Bundle are single Shopify products. Multi-buy tiers (2–5 mats at 15–30% off) apply when Fail Up Inc.’s automatic discounts fire on Shopify checkout after cart handoff.",
+      "Yes. Add 2 or more mats and an automatic discount takes at least 10% off at Shopify checkout — no code needed (branded mats often save even more). The Family & Volume Pack and Mat + Guide Bundle are single-click Shopify products.",
   },
   {
     question: "What is your return policy?",
@@ -146,7 +146,7 @@ export const PERSONAS: Record<Exclude<PersonaKey, "master">, PersonaCopy> = {
       {
         question: "How do I outfit a multi-station day?",
         answer:
-          "Start with the Family & Volume Pack (Standard + Junior), then add mats in the Volume Builder for 15–30% multi-buy savings.",
+          "Start with the Family & Volume Pack (Standard + Junior), then add mats in the Volume Builder — 2+ mats save at least 10% automatically at checkout (branded often more).",
       },
       {
         question: "Is it durable enough for picture day abuse?",

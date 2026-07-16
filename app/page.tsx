@@ -15,6 +15,7 @@ import { LooxPhotoWall } from "@/components/LooxPhotoWall";
 import { LooxReviews } from "@/components/LooxReviews";
 import { LooxVideoSlider } from "@/components/LooxVideoSlider";
 import { OfferCatalog } from "@/components/OfferCatalog";
+import { OfferLadder } from "@/components/OfferLadder";
 import { PersonaGate } from "@/components/PersonaGate";
 import { PosePerfectSystem } from "@/components/PosePerfectSystem";
 import { ROICalculator } from "@/components/ROICalculator";
@@ -32,6 +33,7 @@ export default function HomePage() {
       <WhyItWorks />
       <WorkflowCompare />
       <ROICalculator />
+      <OfferLadder />
       <ContextualProof />
       <Ambassadors />
       <UseCaseResults />

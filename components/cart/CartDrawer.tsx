@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { CATALOG } from "@/lib/catalog/catalog";
 import { TrustAssurance } from "@/components/TrustAssurance";
 import { useCart } from "./CartProvider";
+import { GuideBump } from "./GuideBump";
 import { QuantityStepper } from "./QuantityStepper";
 
 function catalogImageForHandle(handle: string): string | null {
@@ -166,6 +167,7 @@ export function CartDrawer() {
         </div>
 
         <div className="border-t border-line bg-white px-5 py-4">
+          <GuideBump className="mb-4" />
           <div className="flex items-center justify-between text-sm">
             <span className="text-muted">Subtotal</span>
             <span className="text-lg font-semibold">{subtotal}</span>

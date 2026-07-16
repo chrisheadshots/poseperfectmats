@@ -20,8 +20,8 @@ export function TrustAssurance({
       {showShippingNote ? (
         <p className="mt-1">
           Free US shipping (economy) — typically 5–7 business days after
-          processing. International calculated at checkout. Volume discounts
-          (2–5 mats, 15–30%) apply automatically at Shopify checkout — no code
+          processing. International calculated at checkout. Buy 2+ mats and save
+          10% (branded often more) — applied automatically at checkout, no code
           needed.
         </p>
       ) : null}

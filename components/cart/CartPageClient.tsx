@@ -5,6 +5,7 @@ import Link from "next/link";
 import { CATALOG } from "@/lib/catalog/catalog";
 import { TrustAssurance } from "@/components/TrustAssurance";
 import { useCart } from "./CartProvider";
+import { GuideBump } from "./GuideBump";
 import { QuantityStepper } from "./QuantityStepper";
 
 function catalogImageForHandle(handle: string): string | null {
@@ -138,6 +139,7 @@ export function CartPageClient() {
           <p className="mt-2 text-xs text-muted">
             Taxes and shipping calculated at Fail Up Inc. Shopify checkout.
           </p>
+          <GuideBump className="mt-4" />
           <TrustAssurance className="mt-3" />
           <button
             type="button"
