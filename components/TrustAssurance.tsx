@@ -8,7 +8,9 @@ type Props = {
    * Show the "Buy 2+ mats and save 10%" volume-discount sentence. Only true
    * for products actually covered by Shopify's automatic volume discount —
    * set to false for products excluded from that discount's scope (e.g.
-   * Video Edition, see lib/catalog/catalog.ts:134-140 for the precedent).
+   * Video Edition, which is absent from VOLUME_ELIGIBLE_IDS in
+   * lib/catalog/catalog.ts and verified via a live cart test to get no
+   * discount at checkout).
    */
   showVolumeDiscount?: boolean;
 };
