@@ -50,7 +50,7 @@ export default function VideoEditionPage() {
       <UseCaseSection />
       <section className="border-y border-line bg-white py-12">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
-          <TrustAssurance />
+          <TrustAssurance showVolumeDiscount={false} />
         </div>
       </section>
       <FAQ items={VIDEO_EDITION_FAQS} title="Video Edition FAQ" />

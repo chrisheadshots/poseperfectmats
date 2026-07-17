@@ -8,7 +8,7 @@ import { useCart } from "./CartProvider";
 const GUIDE = CATALOG["posing-guide"];
 const MAT_HANDLES = new Set(
   Object.values(CATALOG)
-    .filter((i) => i.kind === "mat")
+    .filter((i) => i.kind === "mat" && i.id !== "video-edition")
     .map((i) => i.handle),
 );
 

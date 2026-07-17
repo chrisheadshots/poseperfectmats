@@ -4,12 +4,20 @@ type Props = {
   className?: string;
   /** Show the shipping expectation line (use at checkout handoff points). */
   showShippingNote?: boolean;
+  /**
+   * Show the "Buy 2+ mats and save 10%" volume-discount sentence. Only true
+   * for products actually covered by Shopify's automatic volume discount —
+   * set to false for products excluded from that discount's scope (e.g.
+   * Video Edition, see lib/catalog/catalog.ts:134-140 for the precedent).
+   */
+  showVolumeDiscount?: boolean;
 };
 
 /** Compact trust strip for checkout handoff points — real store numbers only. */
 export function TrustAssurance({
   className = "",
   showShippingNote = true,
+  showVolumeDiscount = true,
 }: Props) {
   return (
     <div className={`text-xs text-muted ${className}`}>
@@ -20,9 +28,10 @@ export function TrustAssurance({
       {showShippingNote ? (
         <p className="mt-1">
           Free US shipping (economy) — typically 5–7 business days after
-          processing. International calculated at checkout. Buy 2+ mats and save
-          10% (branded often more) — applied automatically at checkout, no code
-          needed.
+          processing. International calculated at checkout.
+          {showVolumeDiscount
+            ? " Buy 2+ mats and save 10% (branded often more) — applied automatically at checkout, no code needed."
+            : null}
         </p>
       ) : null}
     </div>

@@ -3,7 +3,8 @@ import { SITE } from "@/lib/copy/personas";
 
 /**
  * Pure schema builder, no React dependency — kept separate from the component
- * below so it can be sanity-checked with a plain node script (see Task 5, Step 2).
+ * below so it can be sanity-checked in isolation (e.g. with a plain node
+ * script) without needing a React render environment.
  * Deliberately has NO aggregateRating: this product has zero Loox reviews.
  */
 export function buildVideoEditionProductSchema() {
