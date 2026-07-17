@@ -61,7 +61,7 @@ export const CATALOG: Record<CatalogItemId, CatalogItem> = {
     description:
       "Same professional stance system with Chris Headshots branding — the mat 1,600+ photographers picked, at the best price.",
     image:
-      "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/2697318803232113874_2048.jpg?v=1774391759",
+      "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/ChatGPT_Image_Jul_14_2026_10_41_18_PM.png?v=1784083338",
     badge: "Most popular",
   },
   "junior-unbranded": {
@@ -75,7 +75,7 @@ export const CATALOG: Record<CatalogItemId, CatalogItem> = {
     description:
       "Sized for kids, school picture days, and second stations — pair with Standard for Family & Volume setups.",
     image:
-      "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/11928183723383658915_2048.jpg?v=1774391970",
+      "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/ChatGPT_Image_Jul_14_2026_07_39_52_PM.png?v=1784083407",
   },
   "posing-guide": {
     id: "posing-guide",

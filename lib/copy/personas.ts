@@ -132,7 +132,7 @@ export const PERSONAS: Record<Exclude<PersonaKey, "master">, PersonaCopy> = {
       "Picture day needs speed and structure. One message — “stand on the blue feet” — keeps K-8, sports, and volume lines consistent across operators.",
     primaryCta: "Shop Volume Packs",
     heroImage:
-      "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/11928183723383658915_2048.jpg?v=1774391970",
+      "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/ChatGPT_Image_Jul_14_2026_07_39_52_PM.png?v=1784083407",
     heroAlt: "PosePerfect Mat Junior for high-volume school photography",
     problemTitle: "Consistency matters when you shoot hundreds in a day.",
     problemBody:
