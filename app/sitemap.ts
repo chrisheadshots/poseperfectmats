@@ -19,6 +19,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...personas,
     {
+      url: `${SITE.url}/video-edition`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
       url: `${SITE.url}/cart`,
       lastModified: now,
       changeFrequency: "monthly",
