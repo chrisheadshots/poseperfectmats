@@ -356,7 +356,7 @@ export function UseCaseSection() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.18em] text-muted">
-            Who it's for
+            Who it’s for
           </p>
           <h2 className="mt-3 max-w-2xl font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl">
             Built for repeatable video setups.
