@@ -456,30 +456,20 @@ export function VideoEditionJsonLd() {
 }
 ```
 
-- [ ] **Step 2: Verify the pure schema function has no `aggregateRating` and the right price**
+- [ ] **Step 2: Verify it compiles in the Next build**
 
-This is the one piece of this feature that's pure logic (no rendering needed), so it can be checked directly with plain Node — no test framework required. Run:
+This file uses the project's `@/` path aliases (`@/lib/catalog/catalog`, `@/lib/copy/personas`), which only resolve through the project's own `tsconfig.json`/Next build pipeline — not a standalone `tsc` invocation. `npm run build` is the correct, reliable way to type-check it. Run:
 
 ```bash
-cd /Users/loft954llc/poseperfectmat
-node -e "
-const ts = require('child_process').execSync('npx tsc --outDir /tmp/ve-check --module commonjs --target es2020 --jsx react --esModuleInterop lib/catalog/catalog.ts lib/copy/personas.ts components/video-edition/VideoEditionJsonLd.tsx 2>&1').toString();
-console.log(ts || 'tsc OK');
-const mod = require('/tmp/ve-check/components/video-edition/VideoEditionJsonLd.js');
-const schema = mod.buildVideoEditionProductSchema();
-console.log(JSON.stringify(schema, null, 2));
-if ('aggregateRating' in schema) { console.error('FAIL: aggregateRating present'); process.exit(1); }
-if (schema.offers.price !== '44.99') { console.error('FAIL: wrong price', schema.offers.price); process.exit(1); }
-console.log('PASS: no aggregateRating, price is 44.99');
-"
+npm run build 2>&1 | tail -20
 ```
-
-Expected final line: `PASS: no aggregateRating, price is 44.99`. (If the ad-hoc `tsc` compile step is awkward in your environment, skip straight to Step 3 — the full browser-based JSON-LD check in Task 8 covers the same assertions end-to-end once the page exists.)
-
-- [ ] **Step 3: Verify it compiles in the Next build**
-
-Run: `npm run build 2>&1 | tail -20`
 Expected: `✓ Compiled successfully`.
+
+- [ ] **Step 3: Manually confirm the schema object literal in Step 1 has no `aggregateRating` key and price math is correct**
+
+Re-read the `buildVideoEditionProductSchema()` function you just wrote in Step 1. Confirm by inspection: (a) no `aggregateRating` field appears anywhere in the returned object — this product has zero Loox reviews; (b) `offers.price` is computed as `(product.priceCents / 100).toFixed(2)` where `product = CATALOG["video-edition"]` and `priceCents: 4499` (set in Task 1) — so `price` evaluates to `"44.99"`.
+
+The full runtime assertion — parsing the actual rendered `<script>` tag in a live browser and checking both of these — happens once the page exists to render it, in Task 6 Step 6. That is the real end-to-end check; this step is a read-through sanity pass before moving on.
 
 - [ ] **Step 4: Commit**
 
@@ -632,7 +622,7 @@ mcp__Claude_Browser__javascript_tool (action: javascript_exec, text:
   "(() => { const d = document.querySelector('[role=\"dialog\"]'); if (!d) return JSON.stringify({drawerOpen:false}); const lines = [...d.querySelectorAll('li')].map(li => li.querySelector('.truncate')?.textContent); const subtotal = d.textContent.match(/Subtotal\\s*\\$[\\d.]+/)?.[0]; return JSON.stringify({drawerOpen:true, lines, subtotal}); })()"
 )
 ```
-Expected: `drawerOpen: true`, `lines` includes `"PosePerfect Mat™ Video Edition (Unbranded)"`, `subtotal` is `"Subtotal$44.99"`.
+Expected: `drawerOpen: true`, `subtotal` is `"Subtotal$44.99"`, and `lines` includes a string containing `"Video Edition"` — check with `.includes("Video Edition")` rather than an exact match. The cart drawer's line-item title (`line.merchandise.product.title` in `components/cart/CartDrawer.tsx`) is populated live from the **real Shopify product title** at checkout time ("PosePerfect Mat™ Video Edition by Chris Headshots (UnBranded)"), which is *not* the same string as this catalog entry's local `title` field written in Task 1 ("PosePerfect Mat™ Video Edition (Unbranded)", used only for this site's own display copy, e.g. in the JSON-LD schema in Task 5). Do not assert an exact string match against the Task 1 title here — that would fail against the real cart response.
 
 - [ ] **Step 6: Browser-verify the JSON-LD script is valid and has no aggregateRating**
 
