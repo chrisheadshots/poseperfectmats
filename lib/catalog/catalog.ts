@@ -4,7 +4,8 @@ export type CatalogItemId =
   | "junior-unbranded"
   | "posing-guide"
   | "family-volume-pack"
-  | "mat-guide-bundle";
+  | "mat-guide-bundle"
+  | "video-edition";
 
 export type CatalogKind = "mat" | "digital" | "bundle";
 
@@ -116,6 +117,18 @@ export const CATALOG: Record<CatalogItemId, CatalogItem> = {
     image:
       "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/13340230636374747239_2048_99828b95-d562-45e9-9f96-dadfeb3412f3.jpg?v=1755060217",
     badge: "Save vs buying separate",
+  },
+  "video-edition": {
+    id: "video-edition",
+    kind: "mat",
+    title: "PosePerfect Mat™ Video Edition (Unbranded)",
+    shortTitle: "Video Edition",
+    handle: "poseperfect-mat™-video-edition",
+    priceCents: 4499,
+    description:
+      "True chroma-key green with color-coded footprint guides — hit the same mark every take, and the mat keys out clean in post.",
+    image:
+      "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/PPM_Video_Mat_2026.png?v=1784077468",
   },
 };
 
