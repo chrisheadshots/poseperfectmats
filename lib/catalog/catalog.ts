@@ -114,8 +114,7 @@ export const CATALOG: Record<CatalogItemId, CatalogItem> = {
     compareAtCents: 7496,
     description:
       "Physical stance system plus the Advanced Posing Guide — the confidence kit for newer shooters and headshot pros.",
-    image:
-      "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/13340230636374747239_2048_99828b95-d562-45e9-9f96-dadfeb3412f3.jpg?v=1755060217",
+    image: "/products/pro-kit-mat-guide.png",
     badge: "Save vs buying separate",
   },
   "video-edition": {

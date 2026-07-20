@@ -93,10 +93,10 @@ export function OfferLadder() {
             </p>
             <div className="relative mt-5 h-32 overflow-hidden rounded-2xl bg-white/95">
               <Image
-                src={GUIDE.image}
-                alt="PosePerfect Mat plus Advanced Posing Guide"
+                src="/products/pro-kit-mat-guide.png"
+                alt="PosePerfect Mat™ plus Advanced Posing Guide"
                 fill
-                className="object-contain p-3"
+                className="object-contain p-2"
                 sizes="360px"
               />
             </div>
