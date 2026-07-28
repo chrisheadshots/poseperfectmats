@@ -25,10 +25,10 @@ export function OfferLadder() {
     <section id="kit" className="scroll-mt-20 bg-paper-deep py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <p className="text-xs uppercase tracking-[0.18em] text-muted">
-          Pick your setup
+          Kits
         </p>
         <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl">
-          One mat fixes today. A kit runs every shoot.
+          Pick your setup
         </h2>
         <p className="mt-3 max-w-2xl text-muted">
           Most photographers start with the Pro Kit - the mat plus the direction

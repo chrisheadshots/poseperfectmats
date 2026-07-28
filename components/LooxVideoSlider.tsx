@@ -75,10 +75,10 @@ export function LooxVideoSlider() {
     <section id="loox-videos" className="scroll-mt-20 bg-ink py-20 text-white">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <p className="text-xs uppercase tracking-[0.18em] text-yellow">
-          Loox video reviews · {LOOX_STATS.count} verified
+          Videos
         </p>
         <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl">
-          Watch real photographers use the mat
+          See it in action
         </h2>
         <p className="mt-3 max-w-2xl text-white/65">
           Verified Loox video reviews from the Fail Up Inc. store - same widget

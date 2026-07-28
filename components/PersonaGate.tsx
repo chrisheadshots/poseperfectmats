@@ -33,14 +33,13 @@ export function PersonaGate() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.18em] text-muted">
-            Who are you?
+            Your shoot
           </p>
           <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl">
-            Pick your workflow. We’ll speak your language.
+            Choose your lane
           </h2>
           <p className="mt-3 max-w-2xl text-muted">
-            Same PosePerfect System™ - customized proof, offers, and copy for
-            the jobs on your calendar.
+            Same mat. Copy and offers matched to the jobs you book.
           </p>
         </Reveal>
         <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

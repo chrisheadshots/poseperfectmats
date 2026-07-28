@@ -58,10 +58,10 @@ export function ROICalculator({ defaults, itemId = "standard-branded" }: Props) 
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.15fr] lg:items-start">
           <Reveal>
             <p className="text-xs uppercase tracking-[0.18em] text-muted">
-              Savings calculator
+              ROI
             </p>
             <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl">
-              Translate “step left” into hours, cash, and bookings.
+              What you&apos;ll save
             </h2>
             <p className="mt-4 max-w-md text-muted">
               Model your next volume day. Official product claim: cut session

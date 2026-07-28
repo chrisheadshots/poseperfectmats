@@ -69,10 +69,10 @@ export function HowItWorks() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.18em] text-muted">
-            Behind the scenes · 30 seconds
+            How it works
           </p>
           <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl">
-            Three steps. Less talking. More keeping.
+            Three steps
           </h2>
         </Reveal>
         <div className="mt-10 grid gap-6 md:grid-cols-3">

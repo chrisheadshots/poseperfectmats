@@ -11,10 +11,10 @@ export function LooxPhotoWall() {
     <section id="customer-photos" className="scroll-mt-20 py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <p className="text-xs uppercase tracking-[0.18em] text-muted">
-          Customer photos · Loox verified
+          Photos
         </p>
         <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl">
-          From real shoots, not stock
+          Real shoot photos
         </h2>
         <p className="mt-3 max-w-2xl text-muted">
           Photo reviews submitted with verified purchases on Fail Up Inc. -

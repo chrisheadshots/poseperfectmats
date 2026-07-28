@@ -13,10 +13,10 @@ export function Ambassadors() {
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
               <p className="text-xs uppercase tracking-[0.18em] text-yellow">
-                Trusted by pros
+                Pros
               </p>
               <h2 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight sm:text-4xl">
-                Working photographers, not influencers
+                Trusted on set
               </h2>
             </div>
             <a

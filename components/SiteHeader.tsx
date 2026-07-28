@@ -3,7 +3,7 @@ import { CartButton } from "@/components/cart/CartButton";
 import { PERSONA_LIST, SITE } from "@/lib/copy/personas";
 
 const HOME_SECTIONS = [
-  { href: "/#who", label: "Who are you?" },
+  { href: "/#who", label: "Shoot" },
   { href: "/#roi", label: "ROI" },
   { href: "/#kit", label: "Kits" },
 ] as const;

@@ -64,17 +64,17 @@ export function WorkflowCompare() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.18em] text-muted">
-            Manual positioning vs PosePerfect
+            Before & after
           </p>
           <h2 className="mt-3 max-w-2xl font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl">
-            Traditional workflow → PosePerfect workflow
+            Old way vs PosePerfect
           </h2>
         </Reveal>
         <div className="mt-10 grid gap-4 lg:grid-cols-2">
           <Reveal>
             <div className="rounded-[1.5rem] border border-line bg-white p-6">
               <p className="text-xs uppercase tracking-[0.16em] text-muted">
-                Traditional
+                Before
               </p>
               <ol className="mt-5 space-y-4 text-sm">
                 {[
@@ -98,7 +98,7 @@ export function WorkflowCompare() {
           <Reveal delay={0.08}>
             <div className="rounded-[1.5rem] border border-yellow bg-ink p-6 text-white">
               <p className="text-xs uppercase tracking-[0.16em] text-yellow">
-                PosePerfect System™
+                With PosePerfect
               </p>
               <ol className="mt-5 space-y-4 text-sm">
                 {[
@@ -185,10 +185,10 @@ export function ContextualProof() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.18em] text-muted">
-            Verified Loox voices
+            Reviews
           </p>
           <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl tracking-tight sm:text-4xl">
-            Photographers describing the same pain - then the same fix.
+            What shooters say
           </h2>
           <div className="mt-6 flex flex-wrap gap-6 text-sm text-muted">
             <span>
@@ -265,10 +265,10 @@ export function Objections() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.18em] text-muted">
-            Common objections
+            Objections
           </p>
           <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl">
-            Straight answers from the set.
+            Quick answers
           </h2>
         </Reveal>
         <div className="mt-10 divide-y divide-line border-y border-line">
@@ -319,10 +319,10 @@ export function UseCaseResults() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.18em] text-yellow">
-            Professional results
+            Use cases
           </p>
           <h2 className="mt-3 max-w-2xl font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl">
-            Built for the jobs photographers actually book.
+            Built for your jobs
           </h2>
         </Reveal>
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

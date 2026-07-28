@@ -12,7 +12,7 @@ type Props = {
 
 export function FAQ({
   items = MASTER_FAQS,
-  title = "Objections, answered",
+  title = "Common questions",
 }: Props) {
   const [open, setOpen] = useState<number | null>(0);
 
