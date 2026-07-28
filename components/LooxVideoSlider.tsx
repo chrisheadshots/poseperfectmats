@@ -3,7 +3,6 @@
 import { useRef, useState } from "react";
 import Image from "next/image";
 import { LOOX_VIDEOS, type LooxVideo } from "@/lib/reviews/loox-media";
-import { LOOX_STATS } from "@/lib/reviews/reviews";
 
 function formatDuration(seconds: number) {
   const m = Math.floor(seconds / 60);
