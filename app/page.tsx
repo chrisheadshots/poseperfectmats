@@ -2,7 +2,6 @@ import { Ambassadors } from "@/components/Ambassadors";
 import { CheckoutButton } from "@/components/CheckoutButton";
 import {
   ContextualProof,
-  Objections,
   UseCaseResults,
   WorkflowCompare,
 } from "@/components/ConversionSections";
@@ -38,7 +37,6 @@ export default function HomePage() {
         reviews={reviewsForPersona("general", 8)}
         title="Buyer reviews"
       />
-      <Objections />
       <FAQ />
       <FinalCTA
         title="Ready for your next shoot?"

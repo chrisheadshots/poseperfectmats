@@ -232,60 +232,6 @@ export function ContextualProof() {
   );
 }
 
-export function Objections() {
-  const items = [
-    {
-      q: "Can’t I just use tape?",
-      a: "Tape marks a point. PosePerfect teaches stance - turn, spread, and consistency - with no residue and a look that belongs in a pro set.",
-    },
-    {
-      q: "Will the mat show in the photo?",
-      a: "For headshots, frame and crop so feet sit below the hero crop. Many leave it just outside the usable frame, or pull it before a wide group final.",
-    },
-    {
-      q: "What if subjects are different heights/sizes?",
-      a: "Standard is the workhorse for adults. Junior covers kids / second stations. Family & Volume Pack pairs both for picture-day throughput.",
-    },
-    {
-      q: "Is this only for volume?",
-      a: "Volume operators feel ROI first - but branded headshot studios love the “stand on blue” clarity that kills awkward silence.",
-    },
-    {
-      q: "Will the print wear out?",
-      a: "Reviewers who store it tightly rolled for long stretches report cracking or fading. Store it flat or loosely rolled print-side out and wipe clean - volume shooters run it through back-to-back picture days.",
-    },
-    {
-      q: "When will it actually arrive?",
-      a: "US orders ship free on the economy tier - typically 5–7 business days after 3–5 days of processing. International orders are carrier-calculated and can sit in customs, so order well ahead of a booked shoot.",
-    },
-  ];
-
-  return (
-    <section id="objections" className="scroll-mt-20 py-20">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <Reveal>
-          <p className="text-xs uppercase tracking-[0.18em] text-muted">
-            Objections
-          </p>
-          <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl">
-            Quick answers
-          </h2>
-        </Reveal>
-        <div className="mt-10 divide-y divide-line border-y border-line">
-          {items.map((item, i) => (
-            <Reveal key={item.q} delay={i * 0.04}>
-              <div className="grid gap-3 py-6 md:grid-cols-[0.9fr_1.4fr]">
-                <h3 className="text-lg font-semibold">{item.q}</h3>
-                <p className="text-sm leading-relaxed text-muted">{item.a}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 export function UseCaseResults() {
   const cases = [
     {
