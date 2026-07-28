@@ -5,7 +5,7 @@ import { PERSONA_LIST, SITE } from "@/lib/copy/personas";
 const HOME_SECTIONS = [
   { href: "/#who", label: "Who are you?" },
   { href: "/#roi", label: "ROI" },
-  { href: "/#system", label: "System" },
+  { href: "/#kit", label: "Kits" },
 ] as const;
 
 export function SiteHeader() {

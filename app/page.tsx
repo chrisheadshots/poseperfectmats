@@ -1,12 +1,9 @@
 import { Ambassadors } from "@/components/Ambassadors";
 import { CheckoutButton } from "@/components/CheckoutButton";
-import { Comparison } from "@/components/Comparison";
 import {
   ContextualProof,
-  CostOfDoingNothing,
   Objections,
   UseCaseResults,
-  WhyItWorks,
   WorkflowCompare,
 } from "@/components/ConversionSections";
 import { FAQ } from "@/components/FAQ";
@@ -17,7 +14,6 @@ import { LooxVideoSlider } from "@/components/LooxVideoSlider";
 import { OfferCatalog } from "@/components/OfferCatalog";
 import { OfferLadder } from "@/components/OfferLadder";
 import { PersonaGate } from "@/components/PersonaGate";
-import { PosePerfectSystem } from "@/components/PosePerfectSystem";
 import { ROICalculator } from "@/components/ROICalculator";
 import { FinalCTA, HowItWorks } from "@/components/Sections";
 import { StickyCta } from "@/components/StickyCta";
@@ -28,18 +24,14 @@ export default function HomePage() {
     <>
       <HeroDemo />
       <PersonaGate />
-      <CostOfDoingNothing />
       <HowItWorks />
-      <WhyItWorks />
       <WorkflowCompare />
       <ROICalculator />
       <OfferLadder />
       <ContextualProof />
       <Ambassadors />
       <UseCaseResults />
-      <Comparison />
       <LooxVideoSlider />
-      <PosePerfectSystem />
       <OfferCatalog persona="master" />
       <LooxPhotoWall />
       <LooxReviews
