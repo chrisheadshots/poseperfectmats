@@ -33,14 +33,14 @@ export function Ambassadors() {
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
           {AMBASSADORS.map((a, i) => (
             <Reveal key={a.handle} delay={i * 0.05}>
-              <article className="flex gap-3 border border-white/10 bg-white/[0.03] p-3 transition hover:border-yellow/40 sm:flex-col sm:p-4">
-                <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl border border-yellow/30 bg-ink-soft sm:aspect-[4/5] sm:h-auto sm:w-full">
+              <article className="flex gap-3 border border-white/10 bg-white/[0.03] p-4 transition hover:border-yellow/40 sm:flex-col sm:items-start">
+                <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full border border-yellow/40 bg-ink-soft sm:h-20 sm:w-20">
                   <Image
                     src={a.image}
                     alt={`${a.name}, professional photographer`}
                     fill
                     className="object-cover object-top"
-                    sizes="(max-width:640px) 64px, 33vw"
+                    sizes="80px"
                   />
                 </div>
                 <div className="min-w-0 flex-1">
