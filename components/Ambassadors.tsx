@@ -7,88 +7,69 @@ import { SITE } from "@/lib/copy/personas";
 
 export function Ambassadors() {
   return (
-    <section id="trusted" className="scroll-mt-20 bg-ink py-20 text-white">
+    <section id="trusted" className="scroll-mt-20 bg-ink py-14 text-white">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal>
-          <p className="text-xs uppercase tracking-[0.18em] text-yellow">
-            Authority
-          </p>
-          <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl">
-            Trusted by Professional Photographers
-          </h2>
-          <p className="mt-3 max-w-2xl text-white/65">
-            Not “influencers.” Working image-makers with real studios, clients,
-            and standards — the people you want setting the bar on set.
-          </p>
-          <a
-            href={SITE.instagramUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-sm text-white/85 transition hover:border-yellow hover:text-yellow"
-          >
-            Follow the brand {SITE.instagramHandle}
-          </a>
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="text-xs uppercase tracking-[0.18em] text-yellow">
+                Trusted by pros
+              </p>
+              <h2 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight sm:text-4xl">
+                Working photographers, not influencers
+              </h2>
+            </div>
+            <a
+              href={SITE.instagramUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm text-white/70 transition hover:text-yellow"
+            >
+              {SITE.instagramHandle} →
+            </a>
+          </div>
         </Reveal>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        <div className="mt-8 grid gap-4 sm:grid-cols-3">
           {AMBASSADORS.map((a, i) => (
-            <Reveal key={a.handle} delay={i * 0.06}>
-              <article className="flex h-full flex-col border border-white/10 bg-white/[0.03] p-5 transition hover:border-yellow/40">
-                <div className="relative mb-5 aspect-[4/5] w-full overflow-hidden rounded-2xl border border-yellow/30 bg-ink-soft">
+            <Reveal key={a.handle} delay={i * 0.05}>
+              <article className="flex gap-3 border border-white/10 bg-white/[0.03] p-3 transition hover:border-yellow/40 sm:flex-col sm:p-4">
+                <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl border border-yellow/30 bg-ink-soft sm:aspect-[4/5] sm:h-auto sm:w-full">
                   <Image
                     src={a.image}
-                    alt={`${a.name} — professional photographer`}
+                    alt={`${a.name}, professional photographer`}
                     fill
                     className="object-cover object-top"
-                    sizes="(max-width:1024px) 100vw, 33vw"
+                    sizes="(max-width:640px) 64px, 33vw"
                   />
                 </div>
-                <p className="text-sm text-yellow">{a.handle}</p>
-                <h3 className="mt-1 text-2xl font-semibold">{a.name}</h3>
-                <p className="mt-1 text-sm text-white/55">{a.role}</p>
-                <p className="mt-1 text-xs uppercase tracking-[0.12em] text-white/40">
-                  {a.location}
-                </p>
-                {a.years ? (
-                  <p className="mt-3 text-xs font-medium text-white/70">
-                    {a.years}
+                <div className="min-w-0 flex-1">
+                  <p className="text-xs text-yellow">{a.handle}</p>
+                  <h3 className="mt-0.5 text-lg font-semibold leading-tight">
+                    {a.name}
+                  </h3>
+                  <p className="mt-0.5 text-xs text-white/50">{a.role}</p>
+                  <p className="mt-2 line-clamp-3 text-sm leading-snug text-white/75">
+                    “{a.highlight}”
                   </p>
-                ) : null}
-                {a.specialty ? (
-                  <p className="mt-1 text-xs text-white/55">
-                    Specialty: {a.specialty}
-                  </p>
-                ) : null}
-                <p className="mt-4 text-sm leading-relaxed text-white/70">
-                  {a.bio}
-                </p>
-                <p className="mt-4 flex-1 text-sm leading-relaxed text-white/85">
-                  “{a.highlight}”
-                </p>
-                {a.accomplishments?.length ? (
-                  <ul className="mt-4 space-y-1.5 text-xs text-white/50">
-                    {a.accomplishments.map((item) => (
-                      <li key={item}>• {item}</li>
-                    ))}
-                  </ul>
-                ) : null}
-                <div className="mt-5 flex flex-wrap gap-4 text-sm">
-                  <a
-                    href={a.instagramUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-yellow hover:underline"
-                  >
-                    Instagram
-                  </a>
-                  <a
-                    href={a.siteUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-white/70 hover:text-yellow hover:underline"
-                  >
-                    Website
-                  </a>
+                  <div className="mt-3 flex gap-3 text-xs">
+                    <a
+                      href={a.instagramUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-yellow hover:underline"
+                    >
+                      Instagram
+                    </a>
+                    <a
+                      href={a.siteUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-white/60 hover:text-yellow hover:underline"
+                    >
+                      Website
+                    </a>
+                  </div>
                 </div>
               </article>
             </Reveal>

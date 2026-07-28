@@ -29,8 +29,8 @@ export const SITE = {
   heroHeadline:
     "Stop Repositioning Every Client. Put Their Feet Where the Perfect Shot Starts.",
   heroSubheadline:
-    "PosePerfect Mat™ is the physical SOP for photographers who shoot people for a living — color-coded footprints so clients stand correctly in seconds, the line keeps moving, and you stop burning billable minutes on the same five instructions.",
-  primaryCta: "Add PosePerfect Mat™ — $44.99",
+    "PosePerfect Mat™ is the physical SOP for photographers who shoot people for a living - color-coded footprints so clients stand correctly in seconds, the line keeps moving, and you stop burning billable minutes on the same five instructions.",
+  primaryCta: "Add PosePerfect Mat™ - $44.99",
   secondaryCta: "See the system",
 } as const;
 
@@ -46,9 +46,9 @@ export const MASTER_FAQS: FaqItem[] = [
       "Standard mats are 18\" × 30\". Junior is built for smaller subjects, kids, and second stations on school or family days. The Family & Volume Pack includes Standard + Junior.",
   },
   {
-    question: "Branded vs Unbranded — which should I buy?",
+    question: "Branded vs Unbranded - which should I buy?",
     answer:
-      "Branded ($44.99) is the most popular pick — 135 verified Loox reviews at 4.7★ and the lowest price. Unbranded ($54.99) keeps a clean, logo-free look for premium studios and full-length framing; buyers specifically praise the option to remove the logo.",
+      "Branded ($44.99) is the most popular pick - 135 verified Loox reviews at 4.7★ and the lowest price. Unbranded ($54.99) keeps a clean, logo-free look for premium studios and full-length framing; buyers specifically praise the option to remove the logo.",
   },
   {
     question: "Is it better than tape or floor dots?",
@@ -58,32 +58,32 @@ export const MASTER_FAQS: FaqItem[] = [
   {
     question: "What surfaces does it work on?",
     answer:
-      "Anti-slip rubber backing grips best on hardwood, concrete, tile, and low-pile carpet. On plush carpet a few reviewers note slight shifting — press it flat and reposition between groups, or gaffer-tape the corners for all-day stations. Wipe clean between sessions.",
+      "Anti-slip rubber backing grips best on hardwood, concrete, tile, and low-pile carpet. On plush carpet a few reviewers note slight shifting - press it flat and reposition between groups, or gaffer-tape the corners for all-day stations. Wipe clean between sessions.",
   },
   {
     question: "How durable is it, and how should I store it?",
     answer:
-      "Built for back-to-back picture days — many volume shooters keep a spare for heavy seasons. To protect the print, store it flat or loosely rolled print-side out; the most common complaint in critical reviews is cracking or fading after long storage tightly rolled. Wipe clean with a soft damp cloth.",
+      "Built for back-to-back picture days - many volume shooters keep a spare for heavy seasons. To protect the print, store it flat or loosely rolled print-side out; the most common complaint in critical reviews is cracking or fading after long storage tightly rolled. Wipe clean with a soft damp cloth.",
   },
   {
     question: "How long does shipping take?",
     answer:
-      "US orders ship free on the economy tier, typically arriving within 5–7 business days after 3–5 days of processing. International orders (27 countries via USPS/DHL) are calculated at checkout and can add customs time — several reviewers recommend ordering well ahead of a booked shoot.",
+      "US orders ship free on the economy tier, typically arriving within 5–7 business days after 3–5 days of processing. International orders (27 countries via USPS/DHL) are calculated at checkout and can add customs time - several reviewers recommend ordering well ahead of a booked shoot.",
   },
   {
     question: "What if the stance feels too wide for a client?",
     answer:
-      "The yellow footprints mark the widest stance. For petite clients or a narrower look, cue the inner edge of the yellow feet — same turn, tighter base. Reviewers use this exact adjustment for smaller-framed clients.",
+      "The yellow footprints mark the widest stance. For petite clients or a narrower look, cue the inner edge of the yellow feet - same turn, tighter base. Reviewers use this exact adjustment for smaller-framed clients.",
   },
   {
     question: "Do quantity discounts and bundles work at checkout?",
     answer:
-      "Yes. Add 2 or more mats and an automatic discount takes at least 10% off at Shopify checkout — no code needed (branded mats often save even more). The Family & Volume Pack and Mat + Guide Bundle are single-click Shopify products.",
+      "Yes. Add 2 or more mats and an automatic discount takes at least 10% off at Shopify checkout - no code needed (branded mats often save even more). The Family & Volume Pack and Mat + Guide Bundle are single-click Shopify products.",
   },
   {
     question: "What is your return policy?",
     answer:
-      "The product page offers a 30-day money-back style trial. Fail Up Inc.’s global refund policy historically restricted returns on sale items — if you need a return, contact support@failupinc.com promptly with your order so they can honor the product-page guarantee language. Buyers with damaged prints report receiving free replacements.",
+      "The product page offers a 30-day money-back style trial. Fail Up Inc.’s global refund policy historically restricted returns on sale items - if you need a return, contact support@failupinc.com promptly with your order so they can honor the product-page guarantee language. Buyers with damaged prints report receiving free replacements.",
   },
 ];
 
@@ -96,7 +96,7 @@ export const PERSONAS: Record<Exclude<PersonaKey, "master">, PersonaCopy> = {
     headline:
       "Move 200 employees through headshots without repeating “step left” 200 times.",
     subheadline:
-      "Give nervous teams one clear cue — put their feet on the colors — and keep the line moving through every conference-room station.",
+      "Give nervous teams one clear cue - put their feet on the colors - and keep the line moving through every conference-room station.",
     primaryCta: "Build My Headshot-Day Kit",
     heroImage:
       "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/poseperfect-mat-hero.png?v=1782353205",
@@ -108,7 +108,7 @@ export const PERSONAS: Record<Exclude<PersonaKey, "master">, PersonaCopy> = {
       {
         question: "Will it look professional in an office?",
         answer:
-          "Yes — especially Unbranded. Clients step on, you shoot, and final headshot crops never need to include the mat.",
+          "Yes - especially Unbranded. Clients step on, you shoot, and final headshot crops never need to include the mat.",
       },
       {
         question: "How many mats for 100+ employees?",
@@ -118,7 +118,7 @@ export const PERSONAS: Record<Exclude<PersonaKey, "master">, PersonaCopy> = {
       {
         question: "Does it work on carpeted conference rooms?",
         answer:
-          "Anti-slip backing grips low-pile office carpet well. On plush carpet, press it flat and reposition between groups — or gaffer-tape the corners for an all-day station.",
+          "Anti-slip backing grips low-pile office carpet well. On plush carpet, press it flat and reposition between groups - or gaffer-tape the corners for an all-day station.",
       },
     ],
   },
@@ -127,9 +127,9 @@ export const PERSONAS: Record<Exclude<PersonaKey, "master">, PersonaCopy> = {
     path: "/school-volume",
     navLabel: "School & volume",
     eyebrow: "School · sports · volume studios",
-    headline: "Standardize stance at every station — even with new assistants.",
+    headline: "Standardize stance at every station - even with new assistants.",
     subheadline:
-      "Picture day needs speed and structure. One message — “stand on the blue feet” — keeps K-8, sports, and volume lines consistent across operators.",
+      "Picture day needs speed and structure. One message - “stand on the blue feet” - keeps K-8, sports, and volume lines consistent across operators.",
     primaryCta: "Shop Volume Packs",
     heroImage:
       "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/ChatGPT_Image_Jul_14_2026_07_39_52_PM.png?v=1784083407",
@@ -146,12 +146,12 @@ export const PERSONAS: Record<Exclude<PersonaKey, "master">, PersonaCopy> = {
       {
         question: "How do I outfit a multi-station day?",
         answer:
-          "Start with the Family & Volume Pack (Standard + Junior), then add mats in the Volume Builder — 2+ mats save at least 10% automatically at checkout (branded often more).",
+          "Start with the Family & Volume Pack (Standard + Junior), then add mats in the Volume Builder - 2+ mats save at least 10% automatically at checkout (branded often more).",
       },
       {
         question: "Is it durable enough for picture day abuse?",
         answer:
-          "Rated for 1000+ sessions with wipe-clean care — built for back-to-back school and sports days.",
+          "Rated for 1000+ sessions with wipe-clean care - built for back-to-back school and sports days.",
       },
     ],
   },
@@ -162,19 +162,19 @@ export const PERSONAS: Record<Exclude<PersonaKey, "master">, PersonaCopy> = {
     eyebrow: "Photo booths · weddings · activations",
     headline: "Make guests stand in the right spot without stopping the party.",
     subheadline:
-      "Self-serve booths and event lines move faster when guests have a visual mark — not an attendant repeating “step left.”",
+      "Self-serve booths and event lines move faster when guests have a visual mark - not an attendant repeating “step left.”",
     primaryCta: "Get the Event Booth Mat",
     heroImage:
       "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/PPM_Mockup_3.png?v=1774391500",
     heroAlt: "PosePerfect Mat for event photo booth setups",
     problemTitle: "Guests crowd the booth and ruin spacing.",
     problemBody:
-      "Event energy is chaos by default. A floor stance system keeps groups framed, shareable, and moving — without awkward operator nagging.",
+      "Event energy is chaos by default. A floor stance system keeps groups framed, shareable, and moving - without awkward operator nagging.",
     faqs: [
       {
         question: "Can guests use it without an attendant?",
         answer:
-          "Color-coded footprints are designed for instant understanding — perfect for semi-self-serve booths.",
+          "Color-coded footprints are designed for instant understanding - perfect for semi-self-serve booths.",
       },
       {
         question: "Will it match my event aesthetic?",
@@ -217,12 +217,12 @@ export const PERSONAS: Record<Exclude<PersonaKey, "master">, PersonaCopy> = {
       {
         question: "How do I clean between families?",
         answer:
-          "Wipe-clean polyester surface — built for back-to-back mini days.",
+          "Wipe-clean polyester surface - built for back-to-back mini days.",
       },
       {
         question: "What if the stance is too wide for kids or petite parents?",
         answer:
-          "Cue the inner edge of the yellow footprints for a narrower base, or use the Junior mat for smaller subjects — same turn, tighter stance.",
+          "Cue the inner edge of the yellow footprints for a narrower base, or use the Junior mat for smaller subjects - same turn, tighter stance.",
       },
     ],
   },
@@ -245,12 +245,12 @@ export const PERSONAS: Record<Exclude<PersonaKey, "master">, PersonaCopy> = {
       {
         question: "Is this only for pros?",
         answer:
-          "No — many buyers use it for first paid headshots and local sessions. The Mat + Guide Bundle is built for that ramp-up.",
+          "No - many buyers use it for first paid headshots and local sessions. The Mat + Guide Bundle is built for that ramp-up.",
       },
       {
         question: "What poses does it help with?",
         answer:
-          "Standing headshots and portrait baselines — foot placement, turn, and weight shift. Fine-tune expression and arms after the stance is set.",
+          "Standing headshots and portrait baselines - foot placement, turn, and weight shift. Fine-tune expression and arms after the stance is set.",
       },
       {
         question: "Should I get branded or unbranded?",

@@ -10,7 +10,7 @@ type Props = {
 };
 
 export function StickyCta({
-  label = "Add PosePerfect Mat™ — $44.99",
+  label = "Add PosePerfect Mat™ - $44.99",
   itemId = "standard-branded",
 }: Props) {
   const [show, setShow] = useState(false);

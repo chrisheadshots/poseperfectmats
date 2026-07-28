@@ -1,4 +1,4 @@
-/** Fail Up Inc. Shopify Meta (Facebook) Pixel — public ID from store customer events. */
+/** Fail Up Inc. Shopify Meta (Facebook) Pixel - public ID from store customer events. */
 export const META_PIXEL_ID =
   process.env.NEXT_PUBLIC_META_PIXEL_ID?.trim() || "1086592242799135";
 

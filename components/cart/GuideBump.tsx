@@ -14,7 +14,7 @@ const MAT_HANDLES = new Set(
 
 /**
  * One-tap attach for the Advanced Posing Guide, shown only when the cart holds a
- * mat but not the guide. Uses the existing addItem path — pure-margin AOV bump at
+ * mat but not the guide. Uses the existing addItem path - pure-margin AOV bump at
  * the auto-opened drawer, the site's highest-intent unused impression.
  */
 export function GuideBump({ className = "" }: { className?: string }) {
@@ -43,7 +43,7 @@ export function GuideBump({ className = "" }: { className?: string }) {
       <div className="min-w-0 flex-1">
         <p className="text-sm font-semibold">Add the Advanced Posing Guide</p>
         <p className="text-xs text-muted">
-          Direction language + body angles that pair with the mat —{" "}
+          Direction language + body angles that pair with the mat -{" "}
           {formatMoney(GUIDE.priceCents)}.
         </p>
       </div>

@@ -17,7 +17,7 @@ export function LooxPhotoWall() {
           From real shoots, not stock
         </h2>
         <p className="mt-3 max-w-2xl text-muted">
-          Photo reviews submitted with verified purchases on Fail Up Inc. —
+          Photo reviews submitted with verified purchases on Fail Up Inc. -
           used here as additional social proof alongside written testimonials.
         </p>
 

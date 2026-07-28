@@ -40,27 +40,27 @@ export const CATALOG: Record<CatalogItemId, CatalogItem> = {
   "standard-unbranded": {
     id: "standard-unbranded",
     kind: "mat",
-    title: "PosePerfect Mat™ — Standard (Unbranded)",
+    title: "PosePerfect Mat™ - Standard (Unbranded)",
     shortTitle: "Unbranded Standard",
     handle: "poseperfect-mat™-by-chris-headshots-unbranded",
     priceCents: 5499,
     compareAtCents: 9999,
     description:
-      "18\" × 30\" color-coded footprint guides with no logo — clean for premium studios and on-camera framing.",
+      "18\" × 30\" color-coded footprint guides with no logo - clean for premium studios and on-camera framing.",
     image:
       "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/poseperfect-mat-hero.png?v=1782353205",
-    badge: "No logo — clean pro look",
+    badge: "No logo - clean pro look",
   },
   "standard-branded": {
     id: "standard-branded",
     kind: "mat",
-    title: "PosePerfect Mat™ — Standard (Branded)",
+    title: "PosePerfect Mat™ - Standard (Branded)",
     shortTitle: "Branded Standard",
     handle: "poseperfect-mat™-by-chris-headshots",
     priceCents: 4499,
     compareAtCents: 8999,
     description:
-      "Same professional stance system with Chris Headshots branding — the mat 1,600+ photographers picked, at the best price.",
+      "Same professional stance system with Chris Headshots branding - the mat 1,600+ photographers picked, at the best price.",
     image:
       "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/ChatGPT_Image_Jul_14_2026_10_41_18_PM.png?v=1784083338",
     badge: "Most popular",
@@ -74,7 +74,7 @@ export const CATALOG: Record<CatalogItemId, CatalogItem> = {
     priceCents: 5499,
     compareAtCents: 9999,
     description:
-      "Sized for kids, school picture days, and second stations — pair with Standard for Family & Volume setups.",
+      "Sized for kids, school picture days, and second stations - pair with Standard for Family & Volume setups.",
     image:
       "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/ChatGPT_Image_Jul_14_2026_07_39_52_PM.png?v=1784083407",
   },
@@ -87,14 +87,14 @@ export const CATALOG: Record<CatalogItemId, CatalogItem> = {
     priceCents: 1997,
     compareAtCents: 3999,
     description:
-      "Digital posing education that pairs with the mat — ideal when you want direction language, not just foot placement.",
+      "Digital posing education that pairs with the mat - ideal when you want direction language, not just foot placement.",
     image:
       "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/PPM_Guide_Mockup_Main.png?v=1755061597",
   },
   "family-volume-pack": {
     id: "family-volume-pack",
     kind: "bundle",
-    title: "Family & Volume Pack — Standard + Junior",
+    title: "Family & Volume Pack - Standard + Junior",
     shortTitle: "Family & Volume Pack",
     handle: "family-volume-pack-poseperfect-mat™-junior-mat",
     priceCents: 9499,
@@ -113,7 +113,7 @@ export const CATALOG: Record<CatalogItemId, CatalogItem> = {
     priceCents: 6747,
     compareAtCents: 7496,
     description:
-      "Physical stance system plus the Advanced Posing Guide — the confidence kit for newer shooters and headshot pros.",
+      "Physical stance system plus the Advanced Posing Guide - the confidence kit for newer shooters and headshot pros.",
     image: "/products/pro-kit-mat-guide.png",
     badge: "Save vs buying separate",
   },
@@ -125,7 +125,7 @@ export const CATALOG: Record<CatalogItemId, CatalogItem> = {
     handle: "poseperfect-mat™-video-edition",
     priceCents: 4499,
     description:
-      "True chroma-key green with color-coded footprint guides — hit the same mark every take, and the mat keys out clean in post.",
+      "True chroma-key green with color-coded footprint guides - hit the same mark every take, and the mat keys out clean in post.",
     image:
       "https://cdn.shopify.com/s/files/1/0817/9099/2702/files/PPM_Video_Mat_2026.png?v=1784077468",
   },
@@ -147,7 +147,7 @@ export const BUNDLE_IDS: CatalogItemId[] = [
  * Verified against live Storefront carts (2026-07-15): a "Buy 2+ mats, save 10%"
  * automatic discount fires on every mat (unbranded, junior, mixed). Branded mats
  * get MORE via a separate store "Bundle Discount" app (15% at 2, 25% at 3), so
- * 10% is the honest floor we advertise — the site never displays a number higher
+ * 10% is the honest floor we advertise - the site never displays a number higher
  * than Shopify charges. Do not re-add a 15–30% ladder; it does not fire uniformly.
  */
 export const VOLUME_TIERS: VolumeTier[] = [{ qty: 2, percentOff: 10 }];

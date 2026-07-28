@@ -12,7 +12,7 @@ type Props = {
   showQty?: boolean;
 };
 
-/** Primary product CTA — adds to Shopify cart with optional quantity. */
+/** Primary product CTA - adds to Shopify cart with optional quantity. */
 export function CheckoutButton({
   label = "Add to cart",
   itemId = "standard-branded",

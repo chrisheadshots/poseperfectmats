@@ -15,7 +15,7 @@ const FLOOR_OFF = VOLUME_TIERS[0].percentOff;
  * Good/Better/Best value ladder shown at peak intent (right after the ROI
  * calculator). The middle "Pro Kit" is center-staged (decoy effect) and adds
  * mat + guide via the multi-line cart path. Prices shown are real à-la-carte
- * totals or full price + an honest "discount at checkout" note — never a number
+ * totals or full price + an honest "discount at checkout" note - never a number
  * higher than Shopify charges.
  */
 export function OfferLadder() {
@@ -31,13 +31,13 @@ export function OfferLadder() {
           One mat fixes today. A kit runs every shoot.
         </h2>
         <p className="mt-3 max-w-2xl text-muted">
-          Most photographers start with the Pro Kit — the mat plus the direction
+          Most photographers start with the Pro Kit - the mat plus the direction
           language to use it. Shooting volume? The Studio Pack discounts
           automatically at checkout.
         </p>
 
         <div className="mt-10 grid items-start gap-4 lg:grid-cols-3">
-          {/* Good — Solo */}
+          {/* Good - Solo */}
           <article className="flex h-full flex-col rounded-3xl border border-line bg-white p-6">
             <p className="text-xs uppercase tracking-[0.14em] text-muted">
               Solo Mat
@@ -46,7 +46,7 @@ export function OfferLadder() {
               {formatMoney(BRANDED.priceCents)}
             </p>
             <p className="mt-1 text-sm text-muted">
-              One branded PosePerfect Mat™ — fix your next session.
+              One branded PosePerfect Mat™ - fix your next session.
             </p>
             <div className="relative mt-5 h-32 overflow-hidden rounded-2xl bg-paper">
               <Image
@@ -74,7 +74,7 @@ export function OfferLadder() {
             </button>
           </article>
 
-          {/* Better — Pro Kit (center-staged) */}
+          {/* Better - Pro Kit (center-staged) */}
           <article className="flex h-full flex-col rounded-3xl border-2 border-yellow bg-ink p-6 text-white shadow-[0_20px_60px_rgba(12,12,12,0.18)] lg:-mt-3 lg:mb-3">
             <div className="flex items-center justify-between">
               <p className="text-xs uppercase tracking-[0.14em] text-yellow">
@@ -88,7 +88,7 @@ export function OfferLadder() {
               {formatMoney(PRO_KIT_CENTS)}
             </p>
             <p className="mt-1 text-sm text-white/70">
-              The mat + the Advanced Posing Guide — everything to direct clients
+              The mat + the Advanced Posing Guide - everything to direct clients
               like a pro.
             </p>
             <div className="relative mt-5 h-32 overflow-hidden rounded-2xl bg-white/95">
@@ -118,11 +118,11 @@ export function OfferLadder() {
               }
               className="mt-6 w-full rounded-full bg-yellow py-3 text-sm font-semibold text-ink transition hover:bg-yellow-deep disabled:opacity-60"
             >
-              {pending ? "Adding…" : `Add the Pro Kit — ${formatMoney(PRO_KIT_CENTS)}`}
+              {pending ? "Adding…" : `Add the Pro Kit - ${formatMoney(PRO_KIT_CENTS)}`}
             </button>
           </article>
 
-          {/* Best — Studio Pack */}
+          {/* Best - Studio Pack */}
           <article className="flex h-full flex-col rounded-3xl border border-line bg-white p-6">
             <p className="text-xs uppercase tracking-[0.14em] text-muted">
               Studio Pack
@@ -131,7 +131,7 @@ export function OfferLadder() {
               {formatMoney(STUDIO_FULL_CENTS)}
             </p>
             <p className="mt-1 text-sm text-muted">
-              Three mats for multi-station days — {FLOOR_OFF}%+ off applies
+              Three mats for multi-station days - {FLOOR_OFF}%+ off applies
               automatically at checkout.
             </p>
             <div className="relative mt-5 h-32 overflow-hidden rounded-2xl bg-paper">

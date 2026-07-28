@@ -55,7 +55,7 @@ export function HowItWorks() {
     {
       n: "02",
       title: "Match feet to colors",
-      body: "Subjects stand on the footprints — stance and turn without a lecture.",
+      body: "Subjects stand on the footprints - stance and turn without a lecture.",
     },
     {
       n: "03",

@@ -28,7 +28,7 @@ export function LooxReviews({
           <p className="font-[family-name:var(--font-display)] text-2xl leading-snug sm:text-3xl">
             “{lead.quote}”
           </p>
-          <footer className="mt-3 text-sm text-muted">— {lead.name}</footer>
+          <footer className="mt-3 text-sm text-muted">- {lead.name}</footer>
         </blockquote>
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {reviews.map((r) => (

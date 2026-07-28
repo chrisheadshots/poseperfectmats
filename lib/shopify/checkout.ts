@@ -94,7 +94,7 @@ export async function addItemsToCart(
   if (!isShopifyConfigured()) {
     return fallbackResult(
       lines[0].itemId,
-      "Storefront API token not configured — opening Fail Up Inc. product page.",
+      "Storefront API token not configured - opening Fail Up Inc. product page.",
     );
   }
 
@@ -118,7 +118,7 @@ export async function addItemsToCart(
   }
 }
 
-/** @deprecated Prefer addItemsToCart — kept for buy-now redirect responses */
+/** @deprecated Prefer addItemsToCart - kept for buy-now redirect responses */
 export async function addItemsAndGetCheckout(
   lines: AddLineRequest[],
 ): Promise<CartActionResult> {

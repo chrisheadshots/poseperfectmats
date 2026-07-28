@@ -13,7 +13,7 @@ export function SiteHeader() {
     <header className="absolute inset-x-0 top-0 z-40">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-5 sm:px-6">
         <Link href="/" className="group flex flex-col">
-          <span className="font-[family-name:var(--font-display)] text-xl tracking-tight text-white sm:text-2xl">
+          <span className="font-[family-name:var(--font-body)] text-xl font-semibold tracking-tight text-white sm:text-2xl">
             {SITE.name}
           </span>
           <span className="text-[11px] uppercase tracking-[0.18em] text-white/55 group-hover:text-yellow">

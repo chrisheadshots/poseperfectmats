@@ -6,7 +6,7 @@ import { LOOX_VIDEOS } from "@/lib/reviews/loox-media";
 export function JsonLd() {
   const product = CATALOG["standard-branded"];
   const productStats = LOOX_STATS_BY_PRODUCT["standard-branded"];
-  // Only reviews left on this exact product — schema must not blend products.
+  // Only reviews left on this exact product - schema must not blend products.
   const productReviews = REVIEWS.filter(
     (r) => r.product === "PosePerfect Mat™ by Chris Headshots",
   ).slice(0, 5);

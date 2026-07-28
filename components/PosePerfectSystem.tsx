@@ -7,7 +7,7 @@ const ROADMAP = [
   {
     status: "live" as const,
     title: "PosePerfect Mat™",
-    body: "The floor SOP — color footprints for adults and brand stations.",
+    body: "The floor SOP - color footprints for adults and brand stations.",
   },
   {
     status: "live" as const,
@@ -17,7 +17,7 @@ const ROADMAP = [
   {
     status: "live" as const,
     title: "Advanced Posing Guide",
-    body: "Coach clients (and yourself) beyond feet — into expression and shape.",
+    body: "Coach clients (and yourself) beyond feet - into expression and shape.",
   },
   {
     status: "live" as const,
@@ -37,7 +37,7 @@ const ROADMAP = [
   {
     status: "future" as const,
     title: "AI Posing Assistant",
-    body: "Real-time cues layered on the physical system — not instead of it.",
+    body: "Real-time cues layered on the physical system - not instead of it.",
   },
   {
     status: "future" as const,
@@ -60,7 +60,7 @@ export function PosePerfectSystem() {
           <p className="mt-4 max-w-2xl text-muted">
             Start with the mat. Stack Junior, the guide, and volume kits as your
             calendar fills. You&apos;re joining an evolving ecosystem built for
-            photographers who treat posing as operations — not improvisation.
+            photographers who treat posing as operations - not improvisation.
           </p>
         </Reveal>
 
@@ -99,7 +99,7 @@ export function PosePerfectSystem() {
               href="/#offers"
               className="rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white hover:bg-ink-soft"
             >
-              Enter the system — shop mats
+              Enter the system - shop mats
             </a>
             <Link
               href="/beginner-photographers"

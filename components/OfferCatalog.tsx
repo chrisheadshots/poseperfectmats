@@ -70,7 +70,7 @@ export function OfferCatalog({ persona = "master" }: Props) {
         <p className="mt-3 max-w-2xl text-muted">
           Start with Standard (Unbranded or Branded), add Junior for kids
           stations, stack the Posing Guide, or jump into volume packs. Quantity
-          first — cart second — Shopify checkout when you&apos;re ready.
+          first - cart second - Shopify checkout when you&apos;re ready.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-2">
@@ -190,7 +190,7 @@ export function OfferCatalog({ persona = "master" }: Props) {
                     className="h-4 w-4 accent-yellow"
                   />
                   Add the Advanced Posing Guide ebook (+
-                  {formatMoney(CATALOG["posing-guide"].priceCents)}) — direction
+                  {formatMoney(CATALOG["posing-guide"].priceCents)}) - direction
                   language that pairs with the mat
                 </label>
               ) : null}
@@ -203,7 +203,7 @@ export function OfferCatalog({ persona = "master" }: Props) {
               ) : null}
               {selectedItem.kind === "mat" && versionQty >= 2 ? (
                 <p className="mt-2 text-xs text-yellow">
-                  {versionQty} mats — {matVolumePercent}%+ off applies
+                  {versionQty} mats - {matVolumePercent}%+ off applies
                   automatically at checkout.
                 </p>
               ) : null}
@@ -227,7 +227,7 @@ export function OfferCatalog({ persona = "master" }: Props) {
         {tab === "volume" ? (
           <div className="mt-8 rounded-2xl border border-line bg-white p-6">
             <p className="text-sm text-muted">
-              Buy 2 or more mats and save at least 10% — applied automatically at
+              Buy 2 or more mats and save at least 10% - applied automatically at
               Shopify checkout, no code needed. Branded mats often save even more.
             </p>
             <div className="mt-6 grid gap-6 md:grid-cols-[1fr_auto]">
@@ -243,7 +243,7 @@ export function OfferCatalog({ persona = "master" }: Props) {
                   >
                     {VOLUME_ELIGIBLE_IDS.map((id) => (
                       <option key={id} value={id}>
-                        {CATALOG[id].shortTitle} —{" "}
+                        {CATALOG[id].shortTitle} -{" "}
                         {formatMoney(CATALOG[id].priceCents)}
                       </option>
                     ))}

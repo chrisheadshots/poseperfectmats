@@ -52,7 +52,7 @@ const SCENES: Scene[] = [
   {
     id: "lineup",
     caption: "Clients line up themselves",
-    sub: "Stance. Spacing. Consistency — without the lecture.",
+    sub: "Stance. Spacing. Consistency - without the lecture.",
     durationMs: 1500,
     mood: "clarity",
   },
@@ -194,7 +194,7 @@ export function HeroDemo() {
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-[family-name:var(--font-display)] text-2xl leading-none tracking-tight text-yellow sm:text-5xl md:text-6xl"
+            className="font-[family-name:var(--font-body)] text-2xl font-semibold leading-none tracking-tight text-yellow sm:text-5xl md:text-6xl"
           >
             {SITE.name}
           </motion.p>
@@ -213,7 +213,7 @@ export function HeroDemo() {
             className="mt-2 max-w-lg text-sm leading-snug text-white/75 sm:mt-5 sm:text-lg sm:leading-relaxed"
           >
             <span className="sm:hidden">
-              Color-coded footprints so clients stand correctly in seconds —
+              Color-coded footprints so clients stand correctly in seconds -
               stop burning billable minutes on “step left.”
             </span>
             <span className="hidden sm:inline">{SITE.heroSubheadline}</span>

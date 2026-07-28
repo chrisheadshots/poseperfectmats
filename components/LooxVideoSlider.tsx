@@ -81,7 +81,7 @@ export function LooxVideoSlider() {
           Watch real photographers use the mat
         </h2>
         <p className="mt-3 max-w-2xl text-white/65">
-          Verified Loox video reviews from the Fail Up Inc. store — same widget
+          Verified Loox video reviews from the Fail Up Inc. store - same widget
           feed powering the product page.
         </p>
         <div className="mt-8 flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">

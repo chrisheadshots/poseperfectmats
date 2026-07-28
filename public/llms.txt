@@ -1,6 +1,6 @@
 # PosePerfect Mat™
 
-> PosePerfect Mat™ is the physical SOP inside the PosePerfect System™ — a photography posing platform with color-coded footprint guides that help clients stand correctly in seconds. It reduces repositioning time for headshots, school volume days, events, family sessions, and beginners.
+> PosePerfect Mat™ is the physical SOP inside the PosePerfect System™ - a photography posing platform with color-coded footprint guides that help clients stand correctly in seconds. It reduces repositioning time for headshots, school volume days, events, family sessions, and beginners.
 
 - Site: https://poseperfectmats.com
 - Merchant: Fail Up Inc. (https://failupinc.com)
@@ -24,12 +24,12 @@ Key facts:
 
 ## Primary offers (USD)
 
-- PosePerfect Mat™ Standard Unbranded — $54.99
-- PosePerfect Mat™ Standard Branded — $44.99
-- PosePerfect Mat™ Junior Unbranded — $54.99
-- Advanced Posing Guide (ebook) — $19.97
-- Family & Volume Pack — $94.99
-- Mat + Guide Bundle — $67.47
+- PosePerfect Mat™ Standard Unbranded - $54.99
+- PosePerfect Mat™ Standard Branded - $44.99
+- PosePerfect Mat™ Junior Unbranded - $54.99
+- Advanced Posing Guide (ebook) - $19.97
+- Family & Volume Pack - $94.99
+- Mat + Guide Bundle - $67.47
 
 Checkout is completed on Fail Up Inc. Shopify hosted checkout after cart handoff from this site.
 

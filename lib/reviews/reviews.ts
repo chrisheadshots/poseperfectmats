@@ -1,6 +1,6 @@
 export type Review = {
   name: string;
-  /** Shown when known (from the live Loox widget). Omitted when the metafield source has no date — never fabricated. */
+  /** Shown when known (from the live Loox widget). Omitted when the metafield source has no date - never fabricated. */
   date?: string;
   body: string;
   product: string;
@@ -39,10 +39,10 @@ export const ORDER_STATS = {
 } as const;
 
 export const REVIEWS: Review[] = [
-  // ——— Corporate headshots ———
+  // --- Corporate headshots ---
   {
     name: "Brian W.",
-    body: "Easily took 1–2 minutes off of each headshot — with 200–250 back to back that pays off. And clients loved how simple it was.",
+    body: "Easily took 1–2 minutes off of each headshot - with 200–250 back to back that pays off. And clients loved how simple it was.",
     product: "PosePerfect Mat™ by Chris Headshots",
     personaTags: ["corporate", "general"],
     rating: 5,
@@ -50,7 +50,7 @@ export const REVIEWS: Review[] = [
   },
   {
     name: "Brian",
-    body: "Chris personally processed my order on the fly and got my mats delivered by the time I needed them for a 500+ person headshot job — used the mats for 3 days straight and the customers loved how easy it was to follow. It for sure cut out 1–2 minutes per headshot. Highly recommend.",
+    body: "Chris personally processed my order on the fly and got my mats delivered by the time I needed them for a 500+ person headshot job - used the mats for 3 days straight and the customers loved how easy it was to follow. It for sure cut out 1–2 minutes per headshot. Highly recommend.",
     product: "PosePerfect Mat™ by Chris Headshots",
     personaTags: ["corporate", "school"],
     rating: 5,
@@ -64,7 +64,7 @@ export const REVIEWS: Review[] = [
   },
   {
     name: "Serge",
-    body: "I went with my daughter, who is the photographer, to a photo shoot with the municipal elected officials — even the clients really liked the mat. The time savings are huge.",
+    body: "I went with my daughter, who is the photographer, to a photo shoot with the municipal elected officials - even the clients really liked the mat. The time savings are huge.",
     product: "PosePerfect Mat™ by Chris Headshots",
     personaTags: ["corporate", "events"],
     rating: 5,
@@ -101,13 +101,13 @@ export const REVIEWS: Review[] = [
   },
   {
     name: "Quynh P.",
-    body: "It's a heavy-duty rubber mat with a premium anti-slip backing that locks onto any surface, from hardwood to slick studio tile. Clear, color-coded footprint guides make positioning foolproof — clients walk up and know exactly where to stand. It completely eliminates the guesswork.",
+    body: "It's a heavy-duty rubber mat with a premium anti-slip backing that locks onto any surface, from hardwood to slick studio tile. Clear, color-coded footprint guides make positioning foolproof - clients walk up and know exactly where to stand. It completely eliminates the guesswork.",
     product: "PosePerfect Mat™ by Chris Headshots",
     personaTags: ["corporate", "general"],
     rating: 5,
   },
 
-  // ——— School / volume ———
+  // --- School / volume ---
   {
     name: "John B.",
     date: "2025-09-17",
@@ -133,7 +133,7 @@ export const REVIEWS: Review[] = [
   },
   {
     name: "Charleston Photographer",
-    body: "Extremely useful during volume photography evolutions. You can have both feet on the same color or alternate — it keeps the subject in the right spot consistently across images and makes it much easier.",
+    body: "Extremely useful during volume photography evolutions. You can have both feet on the same color or alternate - it keeps the subject in the right spot consistently across images and makes it much easier.",
     product: "PosePerfect Mat™ by Chris Headshots",
     personaTags: ["school", "corporate"],
     rating: 5,
@@ -147,7 +147,7 @@ export const REVIEWS: Review[] = [
     rating: 5,
   },
 
-  // ——— Events / photo booths ———
+  // --- Events / photo booths ---
   {
     name: "Renata S.",
     body: "Great idea. Arrived in a timely manner. No surprises. I'll be using it this month for 65+ people whom I will photograph for headshots 5 minutes apart, so efficiency will be key.",
@@ -194,7 +194,7 @@ export const REVIEWS: Review[] = [
     rating: 5,
   },
 
-  // ——— Family / mini sessions ———
+  // --- Family / mini sessions ---
   {
     name: "Shannon L.",
     body: "This makes directing the kids I work with in school photography so much easier.",
@@ -227,7 +227,7 @@ export const REVIEWS: Review[] = [
     rating: 5,
   },
 
-  // ——— Beginner / confidence ———
+  // --- Beginner / confidence ---
   {
     name: "Terry G.",
     body: "After buying, I have used this mat for 3 headshot sessions and can say that I have cut down on my time by several minutes each person. This mat makes it very easy to just say \"stand on the yellow\" and they do. Absolutely amazing product.",
@@ -252,7 +252,7 @@ export const REVIEWS: Review[] = [
   },
   {
     name: "Harry E.",
-    body: "I purchased both the posing mat and the posing guide and I couldn't be happier. The mat makes it so simple to direct clients during headshots — no more second guessing where they should stand. The posing guide gives quick references for different body angles and professional looks.",
+    body: "I purchased both the posing mat and the posing guide and I couldn't be happier. The mat makes it so simple to direct clients during headshots - no more second guessing where they should stand. The posing guide gives quick references for different body angles and professional looks.",
     product: "PosePerfect Mat™ by Chris Headshots",
     personaTags: ["beginner", "corporate"],
     rating: 5,
@@ -284,7 +284,7 @@ export const REVIEWS: Review[] = [
   {
     name: "Gary S.",
     date: "2026-06-20",
-    body: "The pose mat has transformed my clients experience and given me consistent efficiency with my photo shoots. Highly recommend — will grab another as a spare.",
+    body: "The pose mat has transformed my clients experience and given me consistent efficiency with my photo shoots. Highly recommend - will grab another as a spare.",
     product: "PosePerfect Mat™ (UnBranded)",
     personaTags: ["general", "corporate"],
     rating: 5,
@@ -295,7 +295,7 @@ export const REVIEWS: Review[] = [
 export const CASE_STUDY = {
   name: "Brian W., verified Loox buyer",
   quote:
-    "Easily took 1–2 minutes off of each headshot — with 200–250 back to back, that pays off",
+    "Easily took 1–2 minutes off of each headshot - with 200–250 back to back, that pays off",
 };
 
 export function reviewsForPersona(

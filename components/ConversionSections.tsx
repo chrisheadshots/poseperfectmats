@@ -32,7 +32,7 @@ export function CostOfDoingNothing() {
             },
             {
               title: "Throughput ceiling",
-              body: "The line determines your day — not your lighting, crop, or creative skill.",
+              body: "The line determines your day - not your lighting, crop, or creative skill.",
             },
           ].map((item, i) => (
             <Reveal key={item.title} delay={i * 0.06}>
@@ -49,7 +49,7 @@ export function CostOfDoingNothing() {
           <blockquote className="mt-10 max-w-3xl border-l-2 border-yellow pl-5 text-xl leading-relaxed text-ink sm:text-2xl">
             “{CASE_STUDY.quote}”
             <footer className="mt-3 text-sm text-muted">
-              — {CASE_STUDY.name}
+              - {CASE_STUDY.name}
             </footer>
           </blockquote>
         </Reveal>
@@ -105,7 +105,7 @@ export function WorkflowCompare() {
                   "Place the mat once",
                   "Subject matches colored footprints",
                   "Capture the usable frame",
-                  "Next — without reinventing the stance",
+                  "Next - without reinventing the stance",
                 ].map((step, i) => (
                   <li key={step} className="flex gap-3">
                     <span className="font-[family-name:var(--font-display)] text-lg text-yellow">
@@ -143,7 +143,7 @@ export function WhyItWorks() {
             },
             {
               title: "Geometry",
-              body: "Color footprints encode turn and stance — including that crisp shoulder offset pros chase.",
+              body: "Color footprints encode turn and stance - including that crisp shoulder offset pros chase.",
             },
             {
               title: "Operations",
@@ -188,7 +188,7 @@ export function ContextualProof() {
             Verified Loox voices
           </p>
           <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl tracking-tight sm:text-4xl">
-            Photographers describing the same pain — then the same fix.
+            Photographers describing the same pain - then the same fix.
           </h2>
           <div className="mt-6 flex flex-wrap gap-6 text-sm text-muted">
             <span>
@@ -236,7 +236,7 @@ export function Objections() {
   const items = [
     {
       q: "Can’t I just use tape?",
-      a: "Tape marks a point. PosePerfect teaches stance — turn, spread, and consistency — with no residue and a look that belongs in a pro set.",
+      a: "Tape marks a point. PosePerfect teaches stance - turn, spread, and consistency - with no residue and a look that belongs in a pro set.",
     },
     {
       q: "Will the mat show in the photo?",
@@ -248,15 +248,15 @@ export function Objections() {
     },
     {
       q: "Is this only for volume?",
-      a: "Volume operators feel ROI first — but branded headshot studios love the “stand on blue” clarity that kills awkward silence.",
+      a: "Volume operators feel ROI first - but branded headshot studios love the “stand on blue” clarity that kills awkward silence.",
     },
     {
       q: "Will the print wear out?",
-      a: "Reviewers who store it tightly rolled for long stretches report cracking or fading. Store it flat or loosely rolled print-side out and wipe clean — volume shooters run it through back-to-back picture days.",
+      a: "Reviewers who store it tightly rolled for long stretches report cracking or fading. Store it flat or loosely rolled print-side out and wipe clean - volume shooters run it through back-to-back picture days.",
     },
     {
       q: "When will it actually arrive?",
-      a: "US orders ship free on the economy tier — typically 5–7 business days after 3–5 days of processing. International orders are carrier-calculated and can sit in customs, so order well ahead of a booked shoot.",
+      a: "US orders ship free on the economy tier - typically 5–7 business days after 3–5 days of processing. International orders are carrier-calculated and can sit in customs, so order well ahead of a booked shoot.",
     },
   ];
 
@@ -302,7 +302,7 @@ export function UseCaseResults() {
     },
     {
       title: "Studio portraits",
-      body: "Subject confidence up, direction down — feet handled so you direct expression.",
+      body: "Subject confidence up, direction down - feet handled so you direct expression.",
     },
     {
       title: "Family & mini sessions",
@@ -310,7 +310,7 @@ export function UseCaseResults() {
     },
     {
       title: "Beginner photographers",
-      body: "A physical SOP while you learn lighting and crop — fewer “am I doing this right?” moments.",
+      body: "A physical SOP while you learn lighting and crop - fewer “am I doing this right?” moments.",
     },
   ];
 

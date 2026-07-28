@@ -61,7 +61,7 @@ export function Comparison({ compact = false }: { compact?: boolean }) {
         </h2>
         <p className="mt-3 max-w-xl text-muted">
           Floor dots and verbal-only direction still leave clients guessing.
-          Pros standardize the footprint — then direct expression, not GPS.
+          Pros standardize the footprint - then direct expression, not GPS.
         </p>
         <div className="mt-8 overflow-x-auto rounded-2xl border border-line bg-white">
           <table className="min-w-full text-left text-sm">

@@ -1,14 +1,14 @@
 import type { FaqItem } from "@/lib/copy/personas";
 
-/** Hero + page-level copy for the standalone Video Edition page. Not a persona — see docs/superpowers/specs/2026-07-16-video-edition-page-design.md. */
+/** Hero + page-level copy for the standalone Video Edition page. Not a persona - see docs/superpowers/specs/2026-07-16-video-edition-page-design.md. */
 export const VIDEO_EDITION_COPY = {
   eyebrow: "For video & content creators",
   headline: "Same Mark Every Take. Invisible in the Final Cut.",
   subheadline:
-    "PosePerfect Mat™ Video Edition uses true chroma-key green with color-coded footprint guides — hit the same spot every take, and the mat keys out clean in post.",
-  primaryCta: "Add PosePerfect Mat™ Video Edition — $44.99",
+    "PosePerfect Mat™ Video Edition uses true chroma-key green with color-coded footprint guides - hit the same spot every take, and the mat keys out clean in post.",
+  primaryCta: "Add PosePerfect Mat™ Video Edition - $44.99",
   imageAlt:
-    "PosePerfect Mat Video Edition — chroma-key green mat with color-coded footprint guides",
+    "PosePerfect Mat Video Edition - chroma-key green mat with color-coded footprint guides",
   finalCtaTitle: "Try it on your next shoot.",
 } as const;
 
@@ -32,7 +32,7 @@ export const VIDEO_EDITION_MECHANISM_STEPS: MechanismStep[] = [
   {
     n: "03",
     title: "Key it out",
-    body: "The green area keys out with standard chroma-key software, same as your backdrop. Footprints are setup guides — they're under your subject's feet during the actual shot.",
+    body: "The green area keys out with standard chroma-key software, same as your backdrop. Footprints are setup guides - they're under your subject's feet during the actual shot.",
   },
 ];
 
@@ -56,7 +56,7 @@ export const VIDEO_EDITION_USE_CASES: UseCaseCard[] = [
   },
   {
     title: "Rotating-guest shows",
-    body: "Give every guest the same mark — no re-blocking the shot between takes.",
+    body: "Give every guest the same mark - no re-blocking the shot between takes.",
   },
   {
     title: "Multi-take productions",
@@ -68,7 +68,7 @@ export const VIDEO_EDITION_FAQS: FaqItem[] = [
   {
     question: "Will the mat actually disappear in my final video?",
     answer:
-      "The green surface keys out with standard chroma-key software, just like your backdrop. The footprint markers are there to help you set up — they sit under your subject's feet once you're rolling, so they're not visible in the shot either.",
+      "The green surface keys out with standard chroma-key software, just like your backdrop. The footprint markers are there to help you set up - they sit under your subject's feet once you're rolling, so they're not visible in the shot either.",
   },
   {
     question: "How is this different from the standard PosePerfect Mat?",
@@ -83,7 +83,7 @@ export const VIDEO_EDITION_FAQS: FaqItem[] = [
   {
     question: "What size is it?",
     answer:
-      "18\" × 30\", same footprint as the standard mat — portable enough for a desk setup or a studio floor.",
+      "18\" × 30\", same footprint as the standard mat - portable enough for a desk setup or a studio floor.",
   },
   {
     question: "How long does shipping take?",
@@ -93,6 +93,6 @@ export const VIDEO_EDITION_FAQS: FaqItem[] = [
   {
     question: "What is your return policy?",
     answer:
-      "The product page offers a 30-day money-back style trial. Fail Up Inc.'s global refund policy historically restricted returns on sale items — if you need a return, contact support@failupinc.com promptly with your order so they can honor the product-page guarantee language.",
+      "The product page offers a 30-day money-back style trial. Fail Up Inc.'s global refund policy historically restricted returns on sale items - if you need a return, contact support@failupinc.com promptly with your order so they can honor the product-page guarantee language.",
   },
 ];

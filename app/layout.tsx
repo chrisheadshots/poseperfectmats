@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
     default:
-      "PosePerfect Mat™ — The Posing System for Professional Photographers",
+      "PosePerfect Mat™ - The Posing System for Professional Photographers",
     template: "%s · PosePerfect Mat™",
   },
   description: seoDescription,
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "PosePerfect Mat™ — The Posing System for Professional Photographers",
+      "PosePerfect Mat™ - The Posing System for Professional Photographers",
     description: seoDescription,
     url: SITE.url,
     siteName: SITE.name,
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "PosePerfect Mat™ — The Posing System for Professional Photographers",
+      "PosePerfect Mat™ - The Posing System for Professional Photographers",
     description: SITE.heroSubheadline,
   },
   robots: {

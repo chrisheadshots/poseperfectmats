@@ -133,7 +133,7 @@ export function ROICalculator({ defaults, itemId = "standard-branded" }: Props) 
                 <span className="font-semibold text-ink">
                   {Number.isFinite(result.paybackJobs)
                     ? `${Math.max(0.1, result.paybackJobs).toFixed(1)} jobs`
-                    : "—"}
+                    : "-"}
                 </span>{" "}
                 at these inputs · ~{result.monthlyHours.toFixed(1)} hrs / month
                 recovered

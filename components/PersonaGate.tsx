@@ -39,7 +39,7 @@ export function PersonaGate() {
             Pick your workflow. We’ll speak your language.
           </h2>
           <p className="mt-3 max-w-2xl text-muted">
-            Same PosePerfect System™ — customized proof, offers, and copy for
+            Same PosePerfect System™ - customized proof, offers, and copy for
             the jobs on your calendar.
           </p>
         </Reveal>
@@ -79,7 +79,7 @@ export function PersonaGate() {
               </p>
               <h3 className="mt-2 text-xl font-semibold">Studio & volume ops</h3>
               <p className="mt-2 flex-1 text-sm text-white/65">
-                You wear every hat — jump into the full offer stack and system
+                You wear every hat - jump into the full offer stack and system
                 roadmap.
               </p>
               <p className="mt-4 text-sm font-semibold text-yellow">

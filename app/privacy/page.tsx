@@ -46,16 +46,16 @@ export default function PrivacyPage() {
       <h2>Information we collect on this Site</h2>
       <ul>
         <li>
-          <strong>Usage and device data</strong> — pages viewed, referrer, browser
+          <strong>Usage and device data</strong> - pages viewed, referrer, browser
           type, approximate location derived from IP, and similar technical logs
           from our hosting provider (Vercel) and analytics partners.
         </li>
         <li>
-          <strong>Interaction data</strong> — CTA clicks, offer selections, and
+          <strong>Interaction data</strong> - CTA clicks, offer selections, and
           cart handoff events before you are redirected to Shopify checkout.
         </li>
         <li>
-          <strong>Communications</strong> — information you send when emailing or
+          <strong>Communications</strong> - information you send when emailing or
           calling support.
         </li>
       </ul>
