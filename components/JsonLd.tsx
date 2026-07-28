@@ -10,7 +10,7 @@ export function JsonLd() {
   const productReviews = REVIEWS.filter(
     (r) => r.product === "PosePerfect Mat™ by Chris Headshots",
   ).slice(0, 5);
-  const demo = LOOX_VIDEOS.find((v) => v.id === "r5seTpBe3") ?? LOOX_VIDEOS[0];
+  const demo = LOOX_VIDEOS.find((v) => v.id === "YhJnMjnWc") ?? LOOX_VIDEOS[0];
 
   const data = [
     {

@@ -1,15 +1,5 @@
 [
   {
-    "id": "q0NKnMjym",
-    "reviewer": "Quynh P.",
-    "rating": 5,
-    "altText": "Customer video review of PosePerfect Mat\u2122 by Chris Headshots",
-    "poster": "https://images.loox.io/uploads/2026/6/25/q0NKnMjym_guoDmz1J1__orig_thumb.jpg",
-    "preview": "https://images.loox.io/uploads/video-preview/2026/6/25/b3212a9873de8b3e62717dfc85b0b4da_mid.mp4",
-    "videoDuration": 82.3,
-    "verified": true
-  },
-  {
     "id": "YhJnMjnWc",
     "reviewer": "Gary S.",
     "rating": 5,
@@ -17,16 +7,6 @@
     "poster": "https://images.loox.io/uploads/2026/6/20/YhJnMjnWc_BsfP5eCFy_orig_thumb.jpg",
     "preview": "https://images.loox.io/uploads/video-preview/2026/6/20/a707ebaec43b76092a52187901e4ee38_mid.mp4",
     "videoDuration": 71.8,
-    "verified": true
-  },
-  {
-    "id": "r5seTpBe3",
-    "reviewer": "Matt C.",
-    "rating": 5,
-    "altText": "Customer video review of PosePerfect Mat\u2122 by Chris Headshots",
-    "poster": "https://images.loox.io/uploads/2026/6/12/r5seTpBe3_sL4gCu52hW_orig_thumb.jpg",
-    "preview": "https://images.loox.io/uploads/video-preview/2026/6/12/abfa8327c4318db6751227b8e0359f86_mid.mp4",
-    "videoDuration": 25.8,
     "verified": true
   },
   {

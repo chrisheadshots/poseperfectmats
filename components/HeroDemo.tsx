@@ -79,7 +79,7 @@ const SCENES: Scene[] = [
 ];
 
 const DEMO_VIDEO =
-  LOOX_VIDEOS.find((v) => v.id === "r5seTpBe3") ?? LOOX_VIDEOS[0];
+  LOOX_VIDEOS.find((v) => v.id === "YhJnMjnWc") ?? LOOX_VIDEOS[0];
 
 export function HeroDemo() {
   const [index, setIndex] = useState(0);
