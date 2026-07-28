@@ -20,7 +20,7 @@ export function SiteHeader() {
             {SITE.poweredBy}
           </span>
         </Link>
-        <nav className="hidden items-center gap-4 text-sm text-white/75 lg:flex">
+        <nav className="hidden items-center gap-6 text-sm text-white/75 lg:flex">
           {HOME_SECTIONS.map((item) => (
             <a key={item.href} href={item.href} className="transition hover:text-yellow">
               {item.label}

@@ -91,7 +91,7 @@ export const PERSONAS: Record<Exclude<PersonaKey, "master">, PersonaCopy> = {
   corporate: {
     key: "corporate",
     path: "/corporate-headshots",
-    navLabel: "Corporate headshots",
+    navLabel: "Corporate",
     eyebrow: "Corporate & LinkedIn days",
     headline:
       "Move 200 employees through headshots without repeating “step left” 200 times.",
@@ -125,7 +125,7 @@ export const PERSONAS: Record<Exclude<PersonaKey, "master">, PersonaCopy> = {
   school: {
     key: "school",
     path: "/school-volume",
-    navLabel: "School & volume",
+    navLabel: "Volume",
     eyebrow: "School · sports · volume studios",
     headline: "Standardize stance at every station - even with new assistants.",
     subheadline:
@@ -158,7 +158,7 @@ export const PERSONAS: Record<Exclude<PersonaKey, "master">, PersonaCopy> = {
   events: {
     key: "events",
     path: "/event-photo-booths",
-    navLabel: "Events & booths",
+    navLabel: "Events",
     eyebrow: "Photo booths · weddings · activations",
     headline: "Make guests stand in the right spot without stopping the party.",
     subheadline:
