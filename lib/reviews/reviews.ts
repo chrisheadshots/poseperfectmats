@@ -13,9 +13,13 @@ export type Review = {
 };
 
 /**
- * Live Loox totals pulled from Shopify product metafields (namespace `loox`)
- * on 2026-07-14: branded 135 @ 4.7, unbranded 63 @ 4.6, Junior 3 @ 4.7,
- * posing guide 7 @ 4.3 → 208 reviews, 4.66 weighted (displayed as 4.6).
+ * Site-wide Loox totals for brand proof (hero, trust strips).
+ * Pulled from Shopify product metafields (namespace `loox`) on 2026-07-14:
+ * branded 135 @ 4.7 + unbranded 63 @ 4.6 + Junior 3 @ 4.7 + guide 7 @ 4.3
+ * → 208 reviews, 4.66 weighted (displayed as 4.6).
+ *
+ * Product JSON-LD must use LOOX_STATS_BY_PRODUCT for the exact SKU - never
+ * this site-wide total - so schema and on-page product claims stay honest.
  * Refresh via `npm run refresh:reviews` (see scripts/refresh-reviews.mjs).
  */
 export const LOOX_STATS = {
@@ -23,13 +27,21 @@ export const LOOX_STATS = {
   average: 4.6,
 } as const;
 
-/** Per-product Loox stats (same 2026-07-14 metafield pull). */
+/**
+ * Per-product Loox stats (same 2026-07-14 metafield pull).
+ * Use for Product schema aggregateRating and any SKU-specific claim.
+ */
 export const LOOX_STATS_BY_PRODUCT = {
   "standard-branded": { count: 135, average: 4.7 },
   "standard-unbranded": { count: 63, average: 4.6 },
   "junior-unbranded": { count: 3, average: 4.7 },
   "posing-guide": { count: 7, average: 4.3 },
 } as const;
+
+/** Compact site-wide proof line for heroes and trust bars. */
+export function siteProofLabel(): string {
+  return `${LOOX_STATS.count} verified Loox reviews · ${LOOX_STATS.average}★ across PosePerfect`;
+}
 
 /** Real order volume from Shopify analytics (all-time, pulled 2026-07-14). */
 export const ORDER_STATS = {

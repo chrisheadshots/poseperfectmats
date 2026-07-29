@@ -1,4 +1,5 @@
-import { LOOX_STATS, ORDER_STATS } from "@/lib/reviews/reviews";
+import { GUARANTEE, SHIPPING } from "@/lib/copy/trust";
+import { ORDER_STATS, siteProofLabel } from "@/lib/reviews/reviews";
 
 type Props = {
   className?: string;
@@ -24,13 +25,11 @@ export function TrustAssurance({
   return (
     <div className={`text-xs text-muted ${className}`}>
       <p className="font-medium text-ink/80">
-        {ORDER_STATS.label} · {LOOX_STATS.count} verified Loox reviews ·{" "}
-        {LOOX_STATS.average}★ · 30-day guarantee path
+        {ORDER_STATS.label} · {siteProofLabel()} · {GUARANTEE.short}
       </p>
       {showShippingNote ? (
         <p className="mt-1">
-          Free US shipping (economy) - typically 5–7 business days after
-          processing. International calculated at checkout.
+          {SHIPPING.line} International calculated at checkout.
           {showVolumeDiscount
             ? " Buy 2+ mats and save 10% (branded often more) - applied automatically at checkout, no code needed."
             : null}

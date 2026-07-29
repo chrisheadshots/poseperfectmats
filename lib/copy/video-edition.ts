@@ -1,4 +1,5 @@
 import type { FaqItem } from "@/lib/copy/personas";
+import { GUARANTEE } from "@/lib/copy/trust";
 
 /** Hero + page-level copy for the standalone Video Edition page. Not a persona - see docs/superpowers/specs/2026-07-16-video-edition-page-design.md. */
 export const VIDEO_EDITION_COPY = {
@@ -92,7 +93,6 @@ export const VIDEO_EDITION_FAQS: FaqItem[] = [
   },
   {
     question: "What is your return policy?",
-    answer:
-      "The product page offers a 30-day money-back style trial. Fail Up Inc.'s global refund policy historically restricted returns on sale items - if you need a return, contact support@failupinc.com promptly with your order so they can honor the product-page guarantee language.",
+    answer: GUARANTEE.faq,
   },
 ];

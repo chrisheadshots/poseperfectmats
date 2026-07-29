@@ -2,10 +2,13 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { LOOX_STATS, ORDER_STATS } from "@/lib/reviews/reviews";
-import { SITE } from "@/lib/copy/personas";
+import { useEffect } from "react";
 import { CheckoutButton } from "@/components/CheckoutButton";
-import type { CatalogItemId } from "@/lib/catalog/catalog";
+import { trackViewContent } from "@/lib/analytics/meta-pixel";
+import { CATALOG, type CatalogItemId } from "@/lib/catalog/catalog";
+import { SITE } from "@/lib/copy/personas";
+import { GUARANTEE, SHIPPING } from "@/lib/copy/trust";
+import { ORDER_STATS, siteProofLabel } from "@/lib/reviews/reviews";
 
 type Props = {
   headline?: string;
@@ -26,6 +29,15 @@ export function Hero({
   imageAlt = "PosePerfect Mat with color-coded footprint guides",
   itemId = "standard-unbranded",
 }: Props) {
+  useEffect(() => {
+    const item = CATALOG[itemId];
+    trackViewContent({
+      contentIds: [item.handle],
+      contentName: item.title,
+      value: item.priceCents / 100,
+    });
+  }, [itemId]);
+
   return (
     <section className="relative min-h-[92vh] overflow-hidden hero-wash text-white">
       <div className="absolute inset-0 bg-grid opacity-30" />
@@ -70,8 +82,8 @@ export function Hero({
             </a>
           </motion.div>
           <p className="mt-6 text-sm text-white/55">
-            {LOOX_STATS.count} verified Loox reviews · {LOOX_STATS.average}★ ·{" "}
-            {ORDER_STATS.label} · 30-day support path · Free US shipping ·{" "}
+            {siteProofLabel()} · {ORDER_STATS.label} · {GUARANTEE.short} ·{" "}
+            {SHIPPING.short} ·{" "}
             <a
               href={SITE.instagramUrl}
               target="_blank"

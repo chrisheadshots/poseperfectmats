@@ -16,6 +16,7 @@ import { PersonaGate } from "@/components/PersonaGate";
 import { ROICalculator } from "@/components/ROICalculator";
 import { FinalCTA, HowItWorks } from "@/components/Sections";
 import { StickyCta } from "@/components/StickyCta";
+import { GUARANTEE } from "@/lib/copy/trust";
 import { reviewsForPersona } from "@/lib/reviews/reviews";
 
 export default function HomePage() {
@@ -40,7 +41,7 @@ export default function HomePage() {
       <FAQ />
       <FinalCTA
         title="Ready for your next shoot?"
-        body="Add PosePerfect Mat™, stack Junior and the guide as you grow. If it does not make positioning faster, contact Fail Up Inc. within 30 days about the product-page guarantee path."
+        body={GUARANTEE.ctaBody}
         cta={<CheckoutButton label="Add PosePerfect Mat™ - $44.99" />}
       />
       <StickyCta />

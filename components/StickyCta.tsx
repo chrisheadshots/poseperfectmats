@@ -26,13 +26,16 @@ export function StickyCta({
 
   return (
     <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-ink/95 p-3 backdrop-blur md:hidden">
-      <div className="mx-auto flex w-full max-w-lg justify-center">
+      <div className="mx-auto flex w-full max-w-lg flex-col items-center gap-1.5">
         <CheckoutButton
           label={label}
           itemId={itemId}
           showQty={false}
           className="w-full [&_button]:w-full"
         />
+        <p className="text-[10px] text-white/50">
+          Free US shipping · 30-day money-back guarantee
+        </p>
       </div>
     </div>
   );

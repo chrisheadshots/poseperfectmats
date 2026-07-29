@@ -3,10 +3,17 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { AddToCartButton } from "@/components/AddToCartButton";
-import { LOOX_VIDEOS } from "@/lib/reviews/loox-media";
-import { LOOX_STATS, ORDER_STATS } from "@/lib/reviews/reviews";
+import { useCart } from "@/components/cart/CartProvider";
+import { trackViewContent } from "@/lib/analytics/meta-pixel";
+import { CATALOG, formatMoney } from "@/lib/catalog/catalog";
 import { SITE } from "@/lib/copy/personas";
+import { GUARANTEE, SHIPPING } from "@/lib/copy/trust";
+import { LOOX_VIDEOS } from "@/lib/reviews/loox-media";
+import {
+  LOOX_STATS_BY_PRODUCT,
+  ORDER_STATS,
+  siteProofLabel,
+} from "@/lib/reviews/reviews";
 
 type Scene = {
   id: string;
@@ -81,9 +88,15 @@ const SCENES: Scene[] = [
 const DEMO_VIDEO =
   LOOX_VIDEOS.find((v) => v.id === "YhJnMjnWc") ?? LOOX_VIDEOS[0];
 
+const BRANDED = CATALOG["standard-branded"];
+const GUIDE = CATALOG["posing-guide"];
+const PRO_KIT_CENTS = BRANDED.priceCents + GUIDE.priceCents;
+const BRANDED_LOOX = LOOX_STATS_BY_PRODUCT["standard-branded"];
+
 export function HeroDemo() {
   const [index, setIndex] = useState(0);
   const [reduced, setReduced] = useState(false);
+  const { addItem, pending, error } = useCart();
   const scene = SCENES[index];
 
   useEffect(() => {
@@ -101,6 +114,14 @@ export function HeroDemo() {
     }, scene.durationMs);
     return () => window.clearTimeout(t);
   }, [index, scene.durationMs, reduced]);
+
+  useEffect(() => {
+    trackViewContent({
+      contentIds: [BRANDED.handle],
+      contentName: BRANDED.title,
+      value: BRANDED.priceCents / 100,
+    });
+  }, []);
 
   return (
     <section className="relative overflow-hidden hero-wash text-white lg:min-h-[100svh]">
@@ -164,10 +185,10 @@ export function HeroDemo() {
                   ) : null}
                   {scene.mood === "cta" ? (
                     <a
-                      href="/#offers"
+                      href="/#kit"
                       className="mt-2 inline-flex rounded-full bg-yellow px-3 py-1.5 text-xs font-semibold text-ink sm:mt-4 sm:px-4 sm:py-2 sm:text-sm"
                     >
-                      Build your kit →
+                      Compare kits →
                     </a>
                   ) : null}
                 </motion.div>
@@ -218,36 +239,98 @@ export function HeroDemo() {
             </span>
             <span className="hidden sm:inline">{SITE.heroSubheadline}</span>
           </motion.p>
+
+          {/* Proof bar */}
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="mt-3 text-[11px] leading-relaxed text-white/60 sm:mt-5 sm:text-sm"
+          >
+            {siteProofLabel()} · {ORDER_STATS.label}
+            <span className="hidden sm:inline">
+              {" "}
+              · Branded mat {BRANDED_LOOX.count} reviews @ {BRANDED_LOOX.average}
+              ★
+            </span>
+          </motion.p>
+
+          {/* Offer stack: Mat vs Pro Kit */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.24 }}
-            className="mt-4 flex flex-wrap items-center gap-2 sm:mt-8 sm:gap-3"
+            className="mt-4 flex flex-col gap-2 sm:mt-6 sm:gap-3"
           >
-            <AddToCartButton
-              label={SITE.primaryCta}
-              showQty={false}
-              buttonClassName="px-5 py-2.5 text-sm shadow-[0_0_0_1px_rgba(245,197,24,0.35)] sm:px-6 sm:py-3"
-            />
-            <a
-              href="/#roi"
-              className="rounded-full border border-white/30 px-4 py-2.5 text-xs font-medium text-white transition hover:border-yellow hover:text-yellow sm:px-5 sm:py-3 sm:text-sm"
-            >
-              Run your ROI
-            </a>
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+              <button
+                type="button"
+                disabled={pending}
+                onClick={() =>
+                  void addItem({ itemId: "standard-branded", quantity: 1 })
+                }
+                className="rounded-full bg-yellow px-5 py-2.5 text-sm font-semibold text-ink shadow-[0_0_0_1px_rgba(245,197,24,0.35)] transition hover:bg-yellow-deep disabled:opacity-60 sm:px-6 sm:py-3"
+              >
+                {pending
+                  ? "Adding…"
+                  : `Add Mat - ${formatMoney(BRANDED.priceCents)}`}
+              </button>
+              <button
+                type="button"
+                disabled={pending}
+                onClick={() =>
+                  void addItem({
+                    lines: [
+                      { itemId: "standard-branded", quantity: 1 },
+                      { itemId: "posing-guide", quantity: 1 },
+                    ],
+                  })
+                }
+                className="rounded-full border border-yellow/70 bg-yellow/10 px-5 py-2.5 text-sm font-semibold text-yellow transition hover:bg-yellow hover:text-ink disabled:opacity-60 sm:px-6 sm:py-3"
+              >
+                {pending
+                  ? "Adding…"
+                  : `Pro Kit - ${formatMoney(PRO_KIT_CENTS)}`}
+              </button>
+            </div>
+            <p className="text-[11px] text-white/55 sm:text-xs">
+              Mat only · or Pro Kit (mat + Advanced Posing Guide). Most
+              photographers start with the Pro Kit.
+            </p>
+            {error ? (
+              <p className="text-xs text-red-300">{error}</p>
+            ) : null}
           </motion.div>
-          <p className="mt-3 text-[11px] leading-relaxed text-white/55 sm:mt-6 sm:text-sm">
-            {LOOX_STATS.count} verified Loox · {LOOX_STATS.average}★ ·{" "}
-            {ORDER_STATS.label} ·{" "}
-            <a
-              href={SITE.instagramUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="text-white/70 underline decoration-yellow/50 underline-offset-4 hover:text-yellow"
-            >
-              {SITE.instagramHandle}
-            </a>
-          </p>
+
+          {/* Shipping + guarantee + secondary */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="mt-3 space-y-2 sm:mt-5"
+          >
+            <p className="text-[11px] leading-relaxed text-white/55 sm:text-sm">
+              {SHIPPING.short} · typically 5–7 business days after processing ·{" "}
+              {GUARANTEE.short}
+            </p>
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-white/50 sm:text-xs">
+              <a
+                href="/#roi"
+                className="underline decoration-white/30 underline-offset-4 transition hover:text-yellow hover:decoration-yellow/50"
+              >
+                Run your ROI
+              </a>
+              <span aria-hidden>·</span>
+              <a
+                href={SITE.instagramUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="underline decoration-white/30 underline-offset-4 transition hover:text-yellow hover:decoration-yellow/50"
+              >
+                {SITE.instagramHandle}
+              </a>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

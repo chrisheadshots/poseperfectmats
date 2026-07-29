@@ -5,6 +5,8 @@ import { LOOX_VIDEOS } from "@/lib/reviews/loox-media";
 
 export function JsonLd() {
   const product = CATALOG["standard-branded"];
+  // Product schema uses branded-mat Loox only (not site-wide 208). Hero/trust
+  // strips may show LOOX_STATS site-wide with "across PosePerfect" labeling.
   const productStats = LOOX_STATS_BY_PRODUCT["standard-branded"];
   // Only reviews left on this exact product - schema must not blend products.
   const productReviews = REVIEWS.filter(

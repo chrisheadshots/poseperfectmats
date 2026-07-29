@@ -1,4 +1,5 @@
 import type { PersonaKey } from "@/lib/catalog/catalog";
+import { GUARANTEE } from "@/lib/copy/trust";
 
 export type FaqItem = {
   question: string;
@@ -82,8 +83,7 @@ export const MASTER_FAQS: FaqItem[] = [
   },
   {
     question: "What is your return policy?",
-    answer:
-      "The product page offers a 30-day money-back style trial. Fail Up Inc.’s global refund policy historically restricted returns on sale items - if you need a return, contact support@failupinc.com promptly with your order so they can honor the product-page guarantee language. Buyers with damaged prints report receiving free replacements.",
+    answer: GUARANTEE.faq,
   },
 ];
 
