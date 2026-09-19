@@ -53,7 +53,7 @@ export function GuideBump({ className = "" }: { className?: string }) {
         onClick={() => void addItem({ itemId: "posing-guide", quantity: 1 })}
         className="shrink-0 rounded-full bg-ink px-3 py-2 text-xs font-semibold text-white transition hover:bg-ink-soft disabled:opacity-60"
       >
-        {pending ? "…" : "Add $19.97"}
+        {pending ? "…" : `Add ${formatMoney(GUIDE.priceCents)}`}
       </button>
     </div>
   );

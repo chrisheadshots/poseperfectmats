@@ -35,7 +35,7 @@ export type VolumeTier = {
   percentOff: number;
 };
 
-/** Live Fail Up Inc. catalog (validated 2026-07-14). Wear+Pose and On-Set Starter excluded. */
+/** Live Fail Up Inc. catalog (validated 2026-09-19). Wear+Pose and On-Set Starter excluded. */
 export const CATALOG: Record<CatalogItemId, CatalogItem> = {
   "standard-unbranded": {
     id: "standard-unbranded",
@@ -84,7 +84,7 @@ export const CATALOG: Record<CatalogItemId, CatalogItem> = {
     title: "Advanced Posing Guide (Ebook)",
     shortTitle: "Posing Guide",
     handle: "poseperfect-mat™-advanced-posing-guide-ebook",
-    priceCents: 1997,
+    priceCents: 2497,
     compareAtCents: 3999,
     description:
       "Digital posing education that pairs with the mat - ideal when you want direction language, not just foot placement.",
@@ -98,6 +98,7 @@ export const CATALOG: Record<CatalogItemId, CatalogItem> = {
     shortTitle: "Family & Volume Pack",
     handle: "family-volume-pack-poseperfect-mat™-junior-mat",
     priceCents: 9499,
+    compareAtCents: 13299,
     description:
       "Two stations ready: Standard + Junior mats for school days, family minis, and multi-assistant workflows.",
     image:
@@ -110,8 +111,8 @@ export const CATALOG: Record<CatalogItemId, CatalogItem> = {
     title: "PosePerfect Mat™ + Advanced Posing Guide",
     shortTitle: "Mat + Guide Bundle",
     handle: "poseperfect-mat™-advanced-posing-guide-bundle",
-    priceCents: 6747,
-    compareAtCents: 7496,
+    priceCents: 7197,
+    compareAtCents: 7996,
     description:
       "Physical stance system plus the Advanced Posing Guide - the confidence kit for newer shooters and headshot pros.",
     image: "/products/pro-kit-mat-guide.png",
@@ -124,6 +125,7 @@ export const CATALOG: Record<CatalogItemId, CatalogItem> = {
     shortTitle: "Video Edition",
     handle: "poseperfect-mat™-video-edition",
     priceCents: 4499,
+    compareAtCents: 6299,
     description:
       "True chroma-key green with color-coded footprint guides - hit the same mark every take, and the mat keys out clean in post.",
     image:

@@ -55,9 +55,9 @@ Checkout still opens Fail Up Inc. Shopify hosted checkout (`cart.checkoutUrl`) a
 
 ## Catalog
 
-**Mats:** Unbranded Standard ($54.99), Branded Standard ($44.99), Junior Unbranded ($54.99), Posing Guide ebook ($19.97)
+**Mats:** Unbranded Standard ($54.99), Branded Standard ($44.99), Junior Unbranded ($54.99), Posing Guide ebook ($24.97)
 
-**Bundles:** Family & Volume Pack ($94.99), Mat + Guide ($67.47)
+**Bundles:** Family & Volume Pack ($94.99), Mat + Guide ($71.97)
 
 **Excluded:** Wear + Pose, On-Set Starter
 
