@@ -77,6 +77,7 @@ export const metadata: Metadata = {
     },
   },
   other: {
+    "facebook-domain-verification": "p5uzlsew0sx0oww3n8n6nbrchza5u6",
     "ai-content-declaration": "human-created marketing site with structured product data",
   },
 };
