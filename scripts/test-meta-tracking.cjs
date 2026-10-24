@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports -- Standalone Node CommonJS test harness. */
 // Run with: node scripts/test-meta-tracking.cjs
 // Exercise emitted events and asynchronous cart actions without contacting Meta/Shopify.
 const assert = require('node:assert/strict');
