@@ -16,8 +16,13 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '${META_PIXEL_ID}');
-fbq('track', 'PageView');
+if (!window.__ppmMetaReady) {
+  fbq('init', '${META_PIXEL_ID}');
+  window.__ppmMetaReady = true;
+  fbq('trackSingle', '${META_PIXEL_ID}', 'PageView', {}, {eventID: 'ppm-' + crypto.randomUUID()});
+  (window.__ppmMetaQueue || []).forEach(function(args) { fbq.apply(null, args); });
+  window.__ppmMetaQueue = [];
+}
         `}
       </Script>
       <noscript>

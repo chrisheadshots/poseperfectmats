@@ -32,7 +32,7 @@ export function Hero({
   useEffect(() => {
     const item = CATALOG[itemId];
     trackViewContent({
-      contentIds: [item.handle],
+      contentIds: [item.metaContentId],
       contentName: item.title,
       value: item.priceCents / 100,
     });

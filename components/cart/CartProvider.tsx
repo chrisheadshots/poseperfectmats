@@ -6,6 +6,7 @@ import {
   useContext,
   useEffect,
   useMemo,
+  useRef,
   useState,
   type ReactNode,
 } from "react";
@@ -43,6 +44,7 @@ async function readJson<T>(res: Response): Promise<T> {
 }
 
 export function CartProvider({ children }: { children: ReactNode }) {
+  const addInFlight = useRef(false);
   const [cart, setCart] = useState<ShopifyCart | null>(null);
   const [configured, setConfigured] = useState(true);
   const [loading, setLoading] = useState(true);
@@ -78,6 +80,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const addItem = useCallback(
     async (payload: AddPayload) => {
+      if (addInFlight.current) return false;
+      addInFlight.current = true;
       setPending(true);
       setError(null);
       try {
@@ -105,7 +109,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
           return true;
         }
 
-        setCart(data.cart);
+        const updatedCart = data.cart;
+        setCart(updatedCart);
         setOpen(true);
 
         const lines =
@@ -122,7 +127,13 @@ export function CartProvider({ children }: { children: ReactNode }) {
           return sum + (item.priceCents / 100) * line.quantity;
         }, 0);
         trackMetaEvent("AddToCart", {
-          content_ids: lines.map((line) => CATALOG[line.itemId].handle),
+          content_ids: lines.map((line) => {
+            const item = CATALOG[line.itemId];
+            const addedLine = updatedCart?.lines.nodes.find(
+              (entry) => entry.merchandise.product.handle === item.handle,
+            );
+            return addedLine?.merchandise.id.split("/").pop() ?? item.metaContentId;
+          }),
           content_type: "product",
           value,
           currency: "USD",
@@ -133,6 +144,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         setError(err instanceof Error ? err.message : "Could not add to cart");
         return false;
       } finally {
+        addInFlight.current = false;
         setPending(false);
       }
     },
@@ -179,18 +191,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
         return;
       }
 
-      if (data.cart) {
-        trackMetaEvent("InitiateCheckout", {
-          content_ids: data.cart.lines.nodes.map(
-            (line) => line.merchandise.product.handle,
-          ),
-          content_type: "product",
-          value: Number(data.cart.cost.totalAmount.amount),
-          currency: data.cart.cost.totalAmount.currencyCode,
-          num_items: data.cart.totalQuantity,
-        });
-      }
-
+      // Shopify's native Meta integration owns InitiateCheckout at checkout load.
+      // Sending it here as well would count the same checkout twice.
       window.location.href = data.checkoutUrl;
     } catch (err) {
       setError(err instanceof Error ? err.message : "Checkout failed");

@@ -4,9 +4,10 @@
  * Funnel coverage on poseperfectmats.com:
  * - PageView: MetaPixel script init
  * - ViewContent: hero / product entry (trackViewContent)
- * - AddToCart / InitiateCheckout: CartProvider + checkout hooks
+ * - AddToCart: successful headless cart mutation only
+ * - InitiateCheckout / AddPaymentInfo / Purchase: native Shopify checkout
  * - Purchase: fires on Fail Up Inc. Shopify checkout (store pixel), not this
- *   headless domain - verify in Events Manager after a test order.
+ *   headless domain. Do not emit a second checkout event before redirecting.
  */
 export const META_PIXEL_ID =
   process.env.NEXT_PUBLIC_META_PIXEL_ID?.trim() || "1086592242799135";
@@ -27,16 +28,27 @@ declare global {
       version?: string;
     };
     _fbq?: Window["fbq"];
+    __ppmMetaReady?: boolean;
+    __ppmMetaQueue?: FbqArgs[];
   }
 }
 
+/** Explicit IDs identify a logical action across transport retries. Scope to this pixel. */
 export function trackMetaEvent(event: string, params?: MetaEventParams) {
-  if (typeof window === "undefined" || typeof window.fbq !== "function") return;
-  if (params) {
-    window.fbq("track", event, params);
-    return;
+  if (typeof window === "undefined") return;
+  const args: FbqArgs = [
+    "trackSingle",
+    META_PIXEL_ID,
+    event,
+    params ?? {},
+    { eventID: `ppm-${crypto.randomUUID()}` },
+  ];
+  if (window.__ppmMetaReady && typeof window.fbq === "function") {
+    window.fbq(...args);
+  } else {
+    // Hero effects may run before Next's afterInteractive pixel initializer.
+    (window.__ppmMetaQueue ??= []).push(args);
   }
-  window.fbq("track", event);
 }
 
 /** Standard ViewContent for catalog entry points (hero, product pages). */

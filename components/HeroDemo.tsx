@@ -117,7 +117,7 @@ export function HeroDemo() {
 
   useEffect(() => {
     trackViewContent({
-      contentIds: [BRANDED.handle],
+      contentIds: [BRANDED.metaContentId],
       contentName: BRANDED.title,
       value: BRANDED.priceCents / 100,
     });

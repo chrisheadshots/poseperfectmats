@@ -15,6 +15,8 @@ export type CatalogItem = {
   title: string;
   shortTitle: string;
   handle: string;
+  /** Shopify variant ID, matching the connected Meta catalog Content ID. */
+  metaContentId: string;
   priceCents: number;
   compareAtCents?: number;
   description: string;
@@ -39,6 +41,7 @@ export type VolumeTier = {
 export const CATALOG: Record<CatalogItemId, CatalogItem> = {
   "standard-unbranded": {
     id: "standard-unbranded",
+    metaContentId: "53217455931710",
     kind: "mat",
     title: "PosePerfect Mat™ - Standard (Unbranded)",
     shortTitle: "Unbranded Standard",
@@ -53,6 +56,7 @@ export const CATALOG: Record<CatalogItemId, CatalogItem> = {
   },
   "standard-branded": {
     id: "standard-branded",
+    metaContentId: "53217456259390",
     kind: "mat",
     title: "PosePerfect Mat™ - Standard (Branded)",
     shortTitle: "Branded Standard",
@@ -67,6 +71,7 @@ export const CATALOG: Record<CatalogItemId, CatalogItem> = {
   },
   "junior-unbranded": {
     id: "junior-unbranded",
+    metaContentId: "53217455735102",
     kind: "mat",
     title: "PosePerfect Mat™ Junior (Unbranded)",
     shortTitle: "Junior Unbranded",
@@ -80,6 +85,7 @@ export const CATALOG: Record<CatalogItemId, CatalogItem> = {
   },
   "posing-guide": {
     id: "posing-guide",
+    metaContentId: "52076244205886",
     kind: "digital",
     title: "Advanced Posing Guide (Ebook)",
     shortTitle: "Posing Guide",
@@ -93,6 +99,7 @@ export const CATALOG: Record<CatalogItemId, CatalogItem> = {
   },
   "family-volume-pack": {
     id: "family-volume-pack",
+    metaContentId: "53864087028030",
     kind: "bundle",
     title: "Family & Volume Pack - Standard + Junior",
     shortTitle: "Family & Volume Pack",
@@ -107,6 +114,7 @@ export const CATALOG: Record<CatalogItemId, CatalogItem> = {
   },
   "mat-guide-bundle": {
     id: "mat-guide-bundle",
+    metaContentId: "54480701063486",
     kind: "bundle",
     title: "PosePerfect Mat™ + Advanced Posing Guide",
     shortTitle: "Mat + Guide Bundle",
@@ -120,6 +128,7 @@ export const CATALOG: Record<CatalogItemId, CatalogItem> = {
   },
   "video-edition": {
     id: "video-edition",
+    metaContentId: "53217457668414",
     kind: "mat",
     title: "PosePerfect Mat™ Video Edition (Unbranded)",
     shortTitle: "Video Edition",
