@@ -1,5 +1,5 @@
 import type { FaqItem } from "@/lib/copy/personas";
-import { GUARANTEE } from "@/lib/copy/trust";
+import { GUARANTEE, SHIPPING } from "@/lib/copy/trust";
 
 /** Hero + page-level copy for the standalone Video Edition page. Not a persona - see docs/superpowers/specs/2026-07-16-video-edition-page-design.md. */
 export const VIDEO_EDITION_COPY = {
@@ -89,7 +89,7 @@ export const VIDEO_EDITION_FAQS: FaqItem[] = [
   {
     question: "How long does shipping take?",
     answer:
-      "US orders ship free on the economy tier, typically arriving within 5–7 business days after 3–5 days of processing. International orders (27 countries via USPS/DHL) are calculated at checkout and can add customs time.",
+      SHIPPING.faq,
   },
   {
     question: "What is your return policy?",

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { CheckoutButton } from "@/components/CheckoutButton";
 import type { CatalogItemId } from "@/lib/catalog/catalog";
+import { GUARANTEE, SHIPPING } from "@/lib/copy/trust";
 
 type Props = {
   label?: string;
@@ -34,7 +35,7 @@ export function StickyCta({
           className="w-full [&_button]:w-full"
         />
         <p className="text-[10px] text-white/50">
-          Free US shipping · 30-day money-back guarantee
+          {SHIPPING.short} · {GUARANTEE.short}
         </p>
       </div>
     </div>

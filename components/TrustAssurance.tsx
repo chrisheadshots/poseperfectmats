@@ -29,7 +29,7 @@ export function TrustAssurance({
       </p>
       {showShippingNote ? (
         <p className="mt-1">
-          {SHIPPING.line} International calculated at checkout.
+          {SHIPPING.line}
           {showVolumeDiscount
             ? " Buy 2+ mats and save 10% (branded often more) - applied automatically at checkout, no code needed."
             : null}

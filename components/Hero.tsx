@@ -83,7 +83,7 @@ export function Hero({
           </motion.div>
           <p className="mt-6 text-sm text-white/55">
             {siteProofLabel()} · {ORDER_STATS.label} · {GUARANTEE.short} ·{" "}
-            {SHIPPING.short} ·{" "}
+            {SHIPPING.short} · {SHIPPING.window} ·{" "}
             <a
               href={SITE.instagramUrl}
               target="_blank"

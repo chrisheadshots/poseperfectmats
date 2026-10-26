@@ -310,8 +310,7 @@ export function HeroDemo() {
             className="mt-3 space-y-2 sm:mt-5"
           >
             <p className="text-[11px] leading-relaxed text-white/55 sm:text-sm">
-              {SHIPPING.short} · typically 5–7 business days after processing ·{" "}
-              {GUARANTEE.short}
+              {SHIPPING.short} · {SHIPPING.window} · {GUARANTEE.short}
             </p>
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-white/50 sm:text-xs">
               <a

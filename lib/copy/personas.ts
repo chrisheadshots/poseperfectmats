@@ -1,5 +1,5 @@
 import type { PersonaKey } from "@/lib/catalog/catalog";
-import { GUARANTEE } from "@/lib/copy/trust";
+import { GUARANTEE, SHIPPING } from "@/lib/copy/trust";
 
 export type FaqItem = {
   question: string;
@@ -69,7 +69,7 @@ export const MASTER_FAQS: FaqItem[] = [
   {
     question: "How long does shipping take?",
     answer:
-      "US orders ship free on the economy tier, typically arriving within 5–7 business days after 3–5 days of processing. International orders (27 countries via USPS/DHL) are calculated at checkout and can add customs time - several reviewers recommend ordering well ahead of a booked shoot.",
+      SHIPPING.faq,
   },
   {
     question: "What if the stance feels too wide for a client?",
